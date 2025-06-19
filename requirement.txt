@@ -1,0 +1,13 @@
+1. events (done)
+2. shops
+3.activities - events, -achievements, -classes , --course content(done)
+4 our expert team (done)
+
+
+//for dashboard
+
+- visitor counter
+
+
+
+//visitor per device counter logic

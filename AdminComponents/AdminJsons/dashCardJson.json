@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Slides",
+    "link": "/dashboard/slides",
+    "image": "/admin/gallery.png"
+  },
+  {
+    "title": "Services",
+    "link": "/dashboard/services",
+    "image": "/admin/service.png"
+  },{
+    "title":"Team Members",
+    "link":"/dashboard/teams",
+    "image":"/admin/partners.png"
+  },
+  {
+    "title": "Products",
+    "link": "/dashboard/products",
+    "image": "/admin/cubes.png"
+  },{
+    "title":"Tutorials",
+    "link":"/dashboard/tutorials",
+    "image":"/admin/tut.png"
+  },
+  {
+    "title": "Blogs",
+    "link": "/dashboard/blogs",
+    "image": "/admin/blog.png"
+  },
+  {
+    "title": "Books",
+    "link": "/dashboard/books",
+    "image": "/admin/books.png"
+  },
+  {
+    "title": "Shop",
+    "link": "/dashboard/shop",
+    "image": "/admin/add-to-cart.png"
+  },
+  {
+    "title": "Events",
+    "link": "/dashboard/events",
+    "image": "/admin/calendar.png"
+  },
+  {
+    "title": "Achievements",
+    "link": "/dashboard/achievements",
+    "image": "/admin/star.png"
+  },
+  {
+    "title":"Courses",
+    "link":"/dashboard/courses",
+    "image":"/admin/book.png"
+  },
+  {
+    "title":"News",
+    "link":"/dashboard/news",
+    "image":"/admin/news.png"
+  },
+  {
+    "title": "Gallery",
+    "link": "/dashboard/gallery",
+    "image": "/admin/time-management.png"
+  },
+  {
+    "title":"Stories",
+    "link":"/dashboard/stories",
+    "image":"/admin/blog.png"
+  },{
+    "title":"Clients",
+    "link":"/dashboard/clients",
+    "image":"/admin/client.png"
+  }
+]
