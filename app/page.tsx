@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import AnalyticsRequester from "@/ApiRequest/AnalyticsRequester";
 import Ads from "@/Components/AdvComps/Ads";
 import Head from "next/head";
+import Hero from "@/Components/homeComps/Hero";
 
 // Dynamic imports for all components
 const SlideHolder = dynamic(() => import("@/Components/Slide/SlideHolder"));
@@ -17,37 +18,38 @@ const HomeBook = dynamic(() => import("@/Components/homeComps/HomeBook"));
 const Client = dynamic(() => import("@/Components/Clients/Client"));
 const Page = async () => {
   return (
-      <main className="mainBox">
-        {/* visit req */}
-        <AnalyticsRequester id="page" />
-        {/* pages */}
-        <SlideHolder />
-        <Ads page={"home"} index={1} />
-        <About />
+    <main className="mainBox">
+      {/* visit req */}
+      <AnalyticsRequester id="page" />
+      {/* pages */}
+      <Hero />
+      {/* <SlideHolder /> */}
+      <Ads page={"home"} index={1} />
+      <About />
 
-        <Ads page={"home"} index={2} />
-        {/* making service section */}
-        <HomeServ />
+      <Ads page={"home"} index={2} />
+      {/* making service section */}
+      <HomeServ />
 
-        <Ads page={"home"} index={3} />
-        {/* making product */}
-        <HomeProducts />
+      <Ads page={"home"} index={3} />
+      {/* making product */}
+      <HomeProducts />
 
-        <Ads page={"home"} index={4} />
-        {/* show video */}
-        <Video />
+      <Ads page={"home"} index={4} />
+      {/* show video */}
+      <Video />
 
-        <Ads page={"home"} index={5} />
-        <HomeBlog />
+      <Ads page={"home"} index={5} />
+      <HomeBlog />
 
-        {/*  */}
-        <Ads page={"home"} index={6} />
-        <HomeBook />
+      {/*  */}
+      <Ads page={"home"} index={6} />
+      <HomeBook />
 
-        <Client />
+      <Client />
 
-        <Ads page={"home"} index={7} />
-      </main>
+      <Ads page={"home"} index={7} />
+    </main>
   );
 };
 
