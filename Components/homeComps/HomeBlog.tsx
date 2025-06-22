@@ -29,6 +29,7 @@ const HomeBlog = async () => {
         <br />
         <br />
       </>
+
     </section>
   );
 };
