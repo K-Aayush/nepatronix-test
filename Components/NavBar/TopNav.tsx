@@ -127,7 +127,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className="absolute mt-2 border shadow-xl w-80 rounded-xl bg-white/10 backdrop-blur-lg border-white/20"
+      className="absolute mt-2 border shadow-xl w-80 rounded-xl bg-white/40 backdrop-blur-lg border-white/20"
       style={{
         transformOrigin: "top",
         perspective: "1000px",
@@ -219,7 +219,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
                 href="/contact"
                 className={`px-4 py-2 text-2xl font-semibold transition-all duration-300 rounded-lg ${
                   isScrolled
-                    ? "text-white bg-blue-500/80 hover:bg-blue-500"
+                    ? "text-gray-400 bg-blue-500/80 hover:bg-blue-500"
                     : "text-gray-900 bg-blue-500/80 hover:bg-blue-500"
                 }`}
               >
