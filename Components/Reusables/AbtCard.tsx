@@ -8,6 +8,9 @@ const AbtCard = ({ data }: { data: { title: string; value: number } }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
+    const currentRef = cardRef.current;
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,14 +24,10 @@ const AbtCard = ({ data }: { data: { title: string; value: number } }) => {
       }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
+    observer.observe(currentRef);
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+      observer.unobserve(currentRef);
     };
   }, []);
 
@@ -57,7 +56,7 @@ const AbtCard = ({ data }: { data: { title: string; value: number } }) => {
   return (
     <div
       ref={cardRef}
-      className="w-fit text-center flex flex-col justify-center h-fit p-8 rounded-full bg-white bg-opacity-65 text-red-500 shadow-2xl"
+      className="flex flex-col justify-center p-8 text-center text-red-500 bg-white rounded-full shadow-2xl w-fit h-fit bg-opacity-65"
       style={{ width: "20rem", height: "20rem" }}
     >
       <p className="text-6xl font-bold">+{num}</p>

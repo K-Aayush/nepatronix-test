@@ -39,26 +39,30 @@ const BookLoader = () => {
     loadMoreData();
   }, [loadMoreData]);
 
-   useEffect(() => {
-      if (!loadMoreRef?.current || !hasMore) return;
-  
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          if (entries[0]?.isIntersecting && !isLoading) {
-            loadMoreData();
-          }
-        },
-        { threshold: 0.1 }
-      );
-  
-      observerRef.current.observe(loadMoreRef?.current);
-  
-      return () => {
-        if (observerRef?.current && loadMoreRef?.current) {
-          observerRef.current.unobserve(loadMoreRef?.current);
+  useEffect(() => {
+    if (!loadMoreRef.current || !hasMore) return;
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && !isLoading) {
+          loadMoreData();
         }
-      };
-    }, [loadMoreData, hasMore, isLoading]);
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = loadMoreRef.current;
+    if (observerRef.current && currentRef) {
+      observerRef.current.observe(currentRef);
+    }
+
+    return () => {
+      if (observerRef.current && currentRef) {
+        observerRef.current.unobserve(currentRef);
+      }
+    };
+  }, [loadMoreData, hasMore, isLoading]);
+
   return (
     <BookHolder isPage={true} isInfiniteScroll={true} data={data}>
       {null}

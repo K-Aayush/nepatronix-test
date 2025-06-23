@@ -1,43 +1,95 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion, Variants } from "framer-motion";
 import ThemeButton2 from "./ThemeButton2";
 
 const BookCard = ({ data }: { data: any }) => {
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
   return (
-    <div className="w-full max-w-[350px] min-h-[550px] relative">
-      <div className="absolute p-[25px] w-full h-full transition-all duration-500 bg-white  cursor-pointer shadow-lg hover:shadow-2xl hover:scale-105 rounded-2xl">
-        <Image
-          src={`/api/files${data?.image}`}
-          alt={data?.title}
-          width={400}
-          height={400}
-          loading="lazy"
-          className="h-[150px] object-cover"
-        />
-        <br />
-        <h3 className="font-bold text-[20px] overflow-hidden h-[60px]">{data?.title.split("")?.slice(0, 40)?.join("")}...</h3>
-        <p
-          className="pt-5 text-[16px]"
-          style={{ height: "100px", overflow: "hidden" }}
-        >
-          {data.description?.split("")?.slice(0, 100)?.join("")}....
-        </p>
-        <ThemeButton2
-          link={`/books/${data?.link ||data?._id}`}
-          text="Read Books"
-          style={{
-            position: "absolute",
-            left: "15px",
-            right: "15px",
-            bottom: "15px",
-          }}
-        />
-        <div
-          className="hidden"
-          dangerouslySetInnerHTML={{ __html: data?.content || "" }}
-        ></div>
-      </div>
-    </div>
+    <motion.div
+      className="relative w-full max-w-[300px] min-h-[350px]"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      whileHover={{ scale: 1.05 }}
+      style={{ perspective: "1000px" }}
+    >
+      <motion.div
+        className="absolute w-full h-full p-4 overflow-hidden text-center shadow-lg rounded-2xl bg-white/10 backdrop-blur-lg"
+        style={{ transformStyle: "preserve-3d" }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <motion.div
+              className="mb-2 transition-transform duration-500 hover:scale-105"
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image
+                src={`/api/files${data?.image}`}
+                alt={data?.title}
+                width={300}
+                height={150}
+                loading="lazy"
+                className="w-full h-[150px] object-cover mx-auto rounded-xl mb-2"
+              />
+            </motion.div>
+            <motion.h3
+              className="text-2xl font-bold text-white mb-2 overflow-hidden h-[40px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {data?.title.split("").slice(0, 30).join("")}...
+            </motion.h3>
+            <motion.p
+              className="mb-4 text-lg text-gray-300"
+              style={{ height: "60px", overflow: "hidden" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              {data?.description?.split("").slice(0, 120).join("")}...
+            </motion.p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <ThemeButton2
+              link={`/books/${data?.link || data?._id}`}
+              text="Read Books"
+              style={{
+                position: "relative",
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: "100%",
+                padding: "0.25rem",
+              }}
+            />
+          </motion.div>
+        </div>
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-2xl" />
+      </motion.div>
+    </motion.div>
   );
 };
 

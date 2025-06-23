@@ -6,12 +6,12 @@ const BlogHolder = ({
   data,
   isPage,
   isInfiniteScroll,
-  children
+  children,
 }: {
   data: any;
   isPage: boolean;
   isInfiniteScroll: boolean;
-  children:any
+  children: any;
 }) => {
   return (
     <section className="w-full py-[15px] text-[20px]  text-center">
@@ -19,7 +19,7 @@ const BlogHolder = ({
         <>
           <br />
           <br />
-          <h1 className="font-bold text-8xl text-[#2c1b3d]">
+          <h1 className="font-bold text-8xl text-[#ffffff]">
             Explore Our Blogs
           </h1>
           <br />
@@ -44,9 +44,12 @@ const BlogHolder = ({
           <br />
         </>
       )}
-      {
-        isInfiniteScroll && <><br/><br/></>
-      }
+      {isInfiniteScroll && (
+        <>
+          <br />
+          <br />
+        </>
+      )}
     </section>
   );
 };

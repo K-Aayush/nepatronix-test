@@ -40,7 +40,7 @@ const ShopLoader = () => {
   }, [loadMoreData]);
 
   useEffect(() => {
-    if (!loadMoreRef?.current || !hasMore) return;
+    if (!loadMoreRef.current || !hasMore) return;
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
@@ -51,14 +51,18 @@ const ShopLoader = () => {
       { threshold: 0.1 }
     );
 
-    observerRef.current.observe(loadMoreRef?.current);
+    const currentRef = loadMoreRef.current;
+    if (observerRef.current && currentRef) {
+      observerRef.current.observe(currentRef);
+    }
 
     return () => {
-      if (observerRef?.current && loadMoreRef?.current) {
-        observerRef.current.unobserve(loadMoreRef?.current);
+      if (observerRef.current && currentRef) {
+        observerRef.current.unobserve(currentRef);
       }
     };
   }, [loadMoreData, hasMore, isLoading]);
+
   return (
     <>
       <ShopHolder isPage={true} isInfiniteScroll={true} data={data} />

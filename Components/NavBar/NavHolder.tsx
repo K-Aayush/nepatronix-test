@@ -1,26 +1,28 @@
-"use client"
-import React, { useState } from 'react'
-import TopNav from './TopNav'
-import SideNav from "./SideNav"
-import { usePathname } from 'next/navigation'
+"use client";
+import React, { useState } from "react";
+import TopNav from "./TopNav";
+import SideNav from "./SideNav";
+import { usePathname } from "next/navigation";
 
 const NavHolder = () => {
+  const [open, setOpen] = useState(false);
 
-  const [open, setOpen] = useState<Boolean>(false)
+  const path = usePathname();
 
-  const path = usePathname()
-
-  if(path.includes("/dashboard")|| path.includes("/profile") || path.includes("/accountant"))return null;
+  if (
+    path.includes("/dashboard") ||
+    path.includes("/profile") ||
+    path.includes("/accountant")
+  )
+    return null;
 
   return (
-    <header className=''>
-
-        {/* top nav */}
-        <TopNav setOpen={setOpen} isOpen={open}/>
-        <SideNav isOpen={open}/>
-
+    <header className="">
+      {/* top nav */}
+      <TopNav setOpen={setOpen} isOpen={open} />
+      <SideNav isOpen={open} setOpen={setOpen} />
     </header>
-  )
-}
+  );
+};
 
-export default NavHolder
+export default NavHolder;

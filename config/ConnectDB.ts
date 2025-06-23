@@ -34,9 +34,9 @@ const ConnectDB = async (): Promise<typeof mongoose> => {
       .connect(process.env.NEXT_APP_DB, {
         serverSelectionTimeoutMS: 5000, // Timeout after 5s
         socketTimeoutMS: 45000, // Close sockets after 45s
-        connectTimeoutMS: 10000, // Connection timeout
-        // Remove replicaSet if not using a replica set
-        // replicaSet: "rs0", // Uncomment if rs0 is confirmed
+        connectTimeoutMS: 10000,
+        directConnection: true, // Connection timeout
+        // Do NOT specify replicaSet here
       })
       .then((mongoose) => {
         mongoose.connection.on("error", (error) => {

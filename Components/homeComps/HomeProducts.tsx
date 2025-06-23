@@ -7,11 +7,11 @@ const HomeProducts = async () => {
   const data = await getLists("products", 0, 8);
 
   return (
-    <section className="w-full py-[15px] text-[20px]  bg-[#fff4f4] text-center">
+    <section className="w-full  text-[20px]  text-center relative  py-20 overflow-hidden bg-gradient-to-b from-black via-purple-900 to-black">
       <>
         <br />
         <br />
-        <h2 className="font-bold text-8xl text-[#2e2e2e]">
+        <h2 className="font-bold text-8xl text-[#ffffff]">
           <span className="text-[#ff5050]">Our</span> Products
         </h2>
         <br />
