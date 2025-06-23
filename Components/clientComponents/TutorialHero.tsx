@@ -18,7 +18,7 @@ const TutorialHero = () => {
         </h1>
         <Link
           href="https://www.youtube.com/@razushrestha3518"
-          className="px-6 py-3 text-lg font-semibold text-white transition-all duration-300 rounded-full shadow-md w-fit bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
+          className="px-6 py-4 text-xl font-semibold text-white transition-all duration-300 rounded-full shadow-md w-fit bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700"
           target="_blank"
         >
           Subscribe
