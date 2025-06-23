@@ -9,10 +9,11 @@ const page = async () => {
   const serviceData = await getLists("books", 0, null);
 
   return (
-    <main className="pt-[8rem] min-h-screen bg-gradient-to-r from-red-300 to-blue-300">
-      <AnalyticsRequester id="" /><Ads page={"books"} index={1}/> 
+    <main className="pt-[8rem] min-h-screen bg-gradient-to-tr  from-black via-indigo-900 to-black">
+      <AnalyticsRequester id="" />
+      <Ads page={"books"} index={1} />
       <BookHolder data={serviceData} isInfiniteScroll={false} isPage={true}>
-        <Ads page={"books"} index={2}/> 
+        <Ads page={"books"} index={2} />
       </BookHolder>
       <BookLoader />
     </main>

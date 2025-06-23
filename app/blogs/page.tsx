@@ -9,7 +9,7 @@ const page = async () => {
   const serviceData = await getLists("blogs", 0, 18);
 
   return (
-    <main className="pt-[8rem] min-h-screen bg-gradient-to-l from-red-200 to-blue-200">
+    <main className="pt-[8rem] min-h-screen bg-gradient-to-tl from-purple-600 to-indigo-500 ">
       <Ads page={"blogs"} index={1} />
       <AnalyticsRequester id="" />
       <BlogHolder data={serviceData} isInfiniteScroll={false} isPage={true}>

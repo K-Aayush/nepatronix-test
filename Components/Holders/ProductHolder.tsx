@@ -19,7 +19,7 @@ const ProductHolder = ({
         <>
           <br />
           <br />
-          <h1 className="font-bold text-8xl text-[#2e2e2e]">
+          <h1 className="font-bold text-8xl text-[#ffffff]">
             <span className="text-[#ff5050]">Our</span> Products
           </h1>
           <br />

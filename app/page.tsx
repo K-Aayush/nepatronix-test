@@ -4,6 +4,7 @@ import AnalyticsRequester from "@/ApiRequest/AnalyticsRequester";
 import Ads from "@/Components/AdvComps/Ads";
 import Head from "next/head";
 import Hero from "@/Components/homeComps/Hero";
+import TeamSection from "@/Components/homeComps/TeamSection";
 
 // Dynamic imports for all components
 const SlideHolder = dynamic(() => import("@/Components/Slide/SlideHolder"));
@@ -37,7 +38,7 @@ const Page = async () => {
 
       <Ads page={"home"} index={4} />
       {/* show video */}
-      <Video />
+      <Client />
 
       <Ads page={"home"} index={5} />
       <HomeBlog />
@@ -46,8 +47,9 @@ const Page = async () => {
       <Ads page={"home"} index={6} />
       <HomeBook />
 
-      <Client />
+      <TeamSection />
 
+      {/* <Video /> */}
       <Ads page={"home"} index={7} />
     </main>
   );
