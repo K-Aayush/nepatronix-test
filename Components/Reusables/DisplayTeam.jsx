@@ -1,91 +1,88 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const DisplayTeam = ({ data }) => {
   return (
-    <div
-      className="w-full flex flex-wrap-reverse bg-gray-100 justify-evenly py-[10rem]"
-      style={{ gap: "2rem", lineHeight:"6rem" }}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="flex flex-col items-center justify-center w-full gap-12 px-4 py-16 lg:flex-row bg-gradient-to-r from-gray-50 to-white"
     >
-      <div className="w-full p-[2rem] max-w-[50rem] xl:max-w-[80rem] xl:py-[5rem]">
-        <h2
-          className="font-bold text-gray-800 bg-gray-100"
-          style={{ fontSize: "4rem" }}
-        >
+      <div className="flex justify-center w-full max-w-md lg:max-w-xl">
+        <div className="relative overflow-hidden border-4 border-blue-100 rounded-full shadow-xl w-[360px] h-[360px]">
+          <Image
+            src={`/api/files${data?.picture}`}
+            alt={`${data?.title}'s picture`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 420px"
+            priority={false}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwABygO3zL3zOQAAAABJRU5ErkJggg=="
+          />
+        </div>
+      </div>
+      <div className="flex flex-col w-full max-w-md gap-6 lg:max-w-7xl">
+        <h2 className="text-3xl font-bold text-gray-800 lg:text-4xl">
           {data?.title}
         </h2>
-        <h3
-          className="font-bold text-blue-500  bg-gray-100"
-          style={{ fontSize: "3rem",padding:"20px" }}
-        >
+        <h3 className="text-xl font-semibold text-blue-600 lg:text-2xl">
           {data?.profession}
         </h3>
-        <p
-          className="w-full text-gray-600 bg-gray-100  overflow-y-scroll h-[100px] xl:h-[220px] custom-scrollbar custom-scroll2"
-          style={{ fontSize: "1.8rem", color: "dimgray", lineHeight:"3rem", padding:"20px" }}
-        >
+        <p className="pr-4 overflow-y-auto text-lg leading-relaxed text-gray-600 max-h-40 lg:max-h-56 custom-scrollbar">
           {data?.about}
         </p>
-        <br/>
-        <div className="flex flex-wrap" style={{ gap: "2rem" }}>
+        <div className="flex flex-wrap gap-4">
           <Link
-            href={data?.portfolio || ""}
-            className="text-[1.8rem] bg-red-400 p-[1rem] border-2 border-red-400 text-white font-semibold rounded-3xl"
-            style={{ borderColor: "rgb(248 113 113)", lineHeight:"2.6rem" }}
+            href={data?.portfolio || "#"}
+            className="px-6 py-3 text-base font-semibold text-white transition-colors bg-red-500 rounded-full shadow-md hover:bg-red-600"
           >
             Visit Full Page
           </Link>
           <Link
-            href={data.resume  || ""}
-            className="text-[1.8rem] bg-white p-[1rem] text-red-400 border-2 border-red-400 font-semibold rounded-3xl"
-            style={{ borderColor: "rgb(248 113 113)" , lineHeight:"2.6rem"}}
+            href={data?.resume || "#"}
+            className="px-6 py-3 text-base font-semibold text-red-500 transition-colors bg-white border-2 border-red-500 rounded-full shadow-md hover:bg-red-50"
           >
             View Resume
           </Link>
         </div>
-        <div
-          className="flex flex-wrap"
-          style={{ gap: "15px", padding: "30px 0 0 0" }}
-        >
-          <Link
-            href={data?.facebook || ""}
-            className="w-fit p-[1rem] text-[18px] text-white bg-blue-500 rounded-full"
-          >
-            <FaFacebookF />
-          </Link>
-          <Link
-            href={data?.instagram || ""}
-            className="w-fit p-[1rem] text-[18px] text-white bg-blue-500 rounded-full"
-          >
-            <FaInstagram />
-          </Link>
-          <Link
-            href={data?.linkedin  || ""}
-            className="w-fit p-[1rem] text-[18px] text-white bg-blue-500 rounded-full"
-          >
-            <FaLinkedinIn />
-          </Link>
+        <div className="flex gap-4 mt-4">
+          {data?.facebook && (
+            <Link
+              href={data.facebook}
+              className="p-3 text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
+              aria-label="Facebook profile"
+            >
+              <FaFacebookF size={18} />
+            </Link>
+          )}
+          {data?.instagram && (
+            <Link
+              href={data.instagram}
+              className="p-3 text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
+              aria-label="Instagram profile"
+            >
+              <FaInstagram size={18} />
+            </Link>
+          )}
+          {data?.linkedin && (
+            <Link
+              href={data.linkedin}
+              className="p-3 text-white transition-colors bg-blue-600 rounded-full hover:bg-blue-700"
+              aria-label="LinkedIn profile"
+            >
+              <FaLinkedinIn size={18} />
+            </Link>
+          )}
         </div>
       </div>
-      <div className="flex flex-col  w-full justify-center max-w-[35rem] xl:max-w-[60rem]">
-        <Image
-          src={`/api/files${data?.picture}`}
-          width={1000}
-          height={1000}
-          className="bg-red-400"
-          style={{
-            width: "100%",
-            height: "fit",
-            objectFit: "contain",
-            objectPosition: "center",
-            borderRadius: "50%",
-          }}
-          alt={`${data?.title}'s picture`}
-        />
-      </div>
-    </div>
+    </motion.div>
   );
 };
 

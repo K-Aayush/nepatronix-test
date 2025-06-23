@@ -7,11 +7,11 @@ import AnalyticsRequester from "@/ApiRequest/AnalyticsRequester";
 const page = async () => {
   const data = await getLists("teams", 0, 0);
   return (
-    <main className="min-h-fit pt-20 bg-gray-100">
-      <AnalyticsRequester id="teams"/>
+    <main className="min-h-screen pt-16 bg-gradient-to-b from-gray-50 to-white">
+      <AnalyticsRequester id="teams" />
       <Slider data={data} length={data?.length}>
         {data?.map((item, idx) => (
-          <DisplayTeam data={item} key={idx} />
+          <DisplayTeam data={item} key={item._id || idx} />
         ))}
       </Slider>
     </main>
