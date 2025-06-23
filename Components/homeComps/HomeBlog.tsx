@@ -4,7 +4,7 @@ import ThemeButton from "../Reusables/ThemeButton";
 import BlogCard from "../Reusables/BlogCard";
 
 const HomeBlog = async () => {
-  const data = await getLists("blogs", 0, 18);
+  const data = await getLists("blogs", 0, 18) || [];;
   const limitedData = data.slice(0, 8);
 
   return (

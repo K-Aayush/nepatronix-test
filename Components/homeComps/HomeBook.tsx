@@ -4,7 +4,7 @@ import ThemeButton from "../Reusables/ThemeButton";
 import { getLists } from "@/ApiRequest/GetData";
 
 const HomeBook = async () => {
-  const data = await getLists("books", 0, 12);
+  const data = await getLists("books", 0, 12) || [];;
   const limitedData = data.slice(0, 8);
   return (
     <section className="w-full py-[15px] text-[20px]  bg-gradient-to-tr  from-black via-indigo-900 to-black text-center relative">

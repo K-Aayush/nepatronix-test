@@ -32,7 +32,7 @@ const ShopImage = ({ oldData }: { oldData: string[] }) => {
     return () => {
       images.forEach((imgUrl) => URL.revokeObjectURL(imgUrl));
     };
-  }, [oldData]);
+  }, [oldData, images]);
 
   return (
     <div className="w-full flex flex-col gap-[20px] border border-gray-200 rounded-[10px] overflow-hidden">
@@ -43,7 +43,7 @@ const ShopImage = ({ oldData }: { oldData: string[] }) => {
           width={500}
           height={500}
           className="object-cover rounded-xl"
-          style={{height:"500px"}}
+          style={{ height: "500px" }}
         />
       ) : (
         <div className="w-[500px] h-[500px] flex items-center text-[20px] justify-center text-gray-500">
@@ -56,7 +56,9 @@ const ShopImage = ({ oldData }: { oldData: string[] }) => {
           {images.map((img, idx) => (
             <button
               key={idx}
-              className={`rounded-xl bg-cover ${index === idx ? "border-2 border-blue-500" : ""}`}
+              className={`rounded-xl bg-cover ${
+                index === idx ? "border-2 border-blue-500" : ""
+              }`}
               onClick={() => setIndex(idx)}
               style={{
                 width: "75px",

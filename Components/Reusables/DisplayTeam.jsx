@@ -35,7 +35,7 @@ const DisplayTeam = ({ data }) => {
         <h3 className="text-xl font-semibold text-blue-600 lg:text-2xl">
           {data?.profession}
         </h3>
-        <p className="pr-4 overflow-y-auto text-lg leading-relaxed text-gray-600 max-h-40 lg:max-h-56 custom-scrollbar">
+        <p className="pr-4 overflow-y-auto text-xl leading-relaxed text-gray-600 max-h-40 lg:max-h-56 custom-scrollbar">
           {data?.about}
         </p>
         <div className="flex flex-wrap gap-4">
