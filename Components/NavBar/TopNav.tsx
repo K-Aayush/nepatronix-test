@@ -35,8 +35,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
   }, []);
 
   const dropdownItems: DropdownItems = {
-    Services: [
-      { label: "Services Overview", href: "/services" },
+    "Med-Tech": [
       { label: "Telemedicine", href: "/services/telemedicine" },
       {
         label: "AI Assisted Diagnostics",
@@ -48,79 +47,119 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       },
       { label: "R&D Med-Tech", href: "/services/research" },
     ],
-    Products: [
-      { label: "Products Overview", href: "/products" },
-      { label: "Drone Technology", href: "/products/drone-technology" },
-      { label: "Submarine Technology", href: "/products/submarine-technology" },
+    "Security & Defense": [
+      { label: "Drone Technology", href: "#drone-technology" },
+      { label: "Submarine Technology", href: "#submarine-technology" },
+      { label: "Communication Technology", href: "#communication-technology" },
+      { label: "R&D Security & Defense", href: "#rnd-security-defense" },
+    ],
+    "AI & ML Agents": [
+      { label: "Chatbots Development", href: "#chatbots-development" },
+      { label: "Agentic AI Development", href: "#agentic-ai-development" },
+      { label: "AI/ML Agents", href: "#ai-ml-agents" },
+      { label: "R&D on AI/ML Products", href: "#rnd-ai-ml-products" },
+    ],
+    "Web/App": [
+      { label: "Web/App Development", href: "#web-app-development" },
+      { label: "Design/IT Consulting", href: "#design-it-consulting" },
       {
-        label: "Communication Technology",
-        href: "/products/communication-technology",
+        label: "AI/ML Agents or MicroAgents Development",
+        href: "#ai-ml-agents-or-microagents-development",
       },
       {
-        label: "R&D Security & Defense",
-        href: "/products/rnd-security-defense",
+        label: "STEAM/IOT/Robotics Data Visualization",
+        href: "#steam-iot-robotics-data-visualization",
       },
-    ],
-    Tutorials: [
-      { label: "Tutorials Overview", href: "/tutorials" },
-      {
-        label: "Chatbots Development",
-        href: "/tutorials/chatbots-development",
-      },
-      {
-        label: "Agentic AI Development",
-        href: "/tutorials/agentic-ai-development",
-      },
-      { label: "AI/ML Agents", href: "/tutorials/ai-ml-agents" },
-      { label: "R&D on AI/ML Products", href: "/tutorials/rnd-ai-ml-products" },
-    ],
-    Blogs: [
-      { label: "Blogs Overview", href: "/blogs" },
-      { label: "Web/App Development", href: "/blogs/web-app-development" },
-      { label: "Design/IT Consulting", href: "/blogs/design-it-consulting" },
-      {
-        label: "AI/ML Agents Development",
-        href: "/blogs/ai-ml-agents-development",
-      },
-      {
-        label: "STEAM/IOT/Robotics Visualization",
-        href: "/blogs/steam-iot-robotics-visualization",
-      },
-    ],
-    Books: [
-      { label: "Books Overview", href: "/books" },
-      { label: "Technology Books", href: "/books/technology" },
-      { label: "AI and ML Books", href: "/books/ai-ml" },
-      { label: "Security & Defense Books", href: "/books/security-defense" },
-    ],
-    Shop: [
-      { label: "Shop Overview", href: "/shop" },
-      { label: "Tech Gadgets", href: "/shop/gadgets" },
-      { label: "Educational Kits", href: "/shop/educational-kits" },
-      { label: "Software Licenses", href: "/shop/software" },
-    ],
-    About: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Mission", href: "/about/mission" },
-      { label: "Our Vision", href: "/about/vision" },
-    ],
-    Team: [
-      { label: "Our Team", href: "/team" },
-      { label: "Leadership", href: "/team/leadership" },
-      { label: "Experts", href: "/team/experts" },
-    ],
-    More: [
-      { label: "Gallery", href: "/gallery" },
-      { label: "Client's Blog", href: "/stories" },
-      { label: "Achievements", href: "/achievements" },
-      { label: "Events", href: "/events" },
-      { label: "News", href: "/news" },
-      { label: "Courses", href: "/courses" },
-      { label: "Usual", href: "/usual" },
-      { label: "Pad Counter", href: "/pad" },
-      { label: "Upload", href: "/upload" },
     ],
   };
+
+  // const dropdownItems: DropdownItems = {
+  //   Services: [
+  //     { label: "Services Overview", href: "/services" },
+  //     { label: "Telemedicine", href: "/services/telemedicine" },
+  //     {
+  //       label: "AI Assisted Diagnostics",
+  //       href: "/services/ai-assisted-diagnostics",
+  //     },
+  //     {
+  //       label: "Portable Patient Monitoring",
+  //       href: "/services/portable-patient-monitoring",
+  //     },
+  //     { label: "R&D Med-Tech", href: "/services/research" },
+  //   ],
+  //   Products: [
+  //     { label: "Products Overview", href: "/products" },
+  //     { label: "Drone Technology", href: "/products/drone-technology" },
+  //     { label: "Submarine Technology", href: "/products/submarine-technology" },
+  //     {
+  //       label: "Communication Technology",
+  //       href: "/products/communication-technology",
+  //     },
+  //     {
+  //       label: "R&D Security & Defense",
+  //       href: "/products/rnd-security-defense",
+  //     },
+  //   ],
+  //   Tutorials: [
+  //     { label: "Tutorials Overview", href: "/tutorials" },
+  //     {
+  //       label: "Chatbots Development",
+  //       href: "/tutorials/chatbots-development",
+  //     },
+  //     {
+  //       label: "Agentic AI Development",
+  //       href: "/tutorials/agentic-ai-development",
+  //     },
+  //     { label: "AI/ML Agents", href: "/tutorials/ai-ml-agents" },
+  //     { label: "R&D on AI/ML Products", href: "/tutorials/rnd-ai-ml-products" },
+  //   ],
+  //   Blogs: [
+  //     { label: "Blogs Overview", href: "/blogs" },
+  //     { label: "Web/App Development", href: "/blogs/web-app-development" },
+  //     { label: "Design/IT Consulting", href: "/blogs/design-it-consulting" },
+  //     {
+  //       label: "AI/ML Agents Development",
+  //       href: "/blogs/ai-ml-agents-development",
+  //     },
+  //     {
+  //       label: "STEAM/IOT/Robotics Visualization",
+  //       href: "/blogs/steam-iot-robotics-visualization",
+  //     },
+  //   ],
+  //   Books: [
+  //     { label: "Books Overview", href: "/books" },
+  //     { label: "Technology Books", href: "/books/technology" },
+  //     { label: "AI and ML Books", href: "/books/ai-ml" },
+  //     { label: "Security & Defense Books", href: "/books/security-defense" },
+  //   ],
+  //   Shop: [
+  //     { label: "Shop Overview", href: "/shop" },
+  //     { label: "Tech Gadgets", href: "/shop/gadgets" },
+  //     { label: "Educational Kits", href: "/shop/educational-kits" },
+  //     { label: "Software Licenses", href: "/shop/software" },
+  //   ],
+  //   About: [
+  //     { label: "About Us", href: "/about" },
+  //     { label: "Our Mission", href: "/about/mission" },
+  //     { label: "Our Vision", href: "/about/vision" },
+  //   ],
+  //   Team: [
+  //     { label: "Our Team", href: "/team" },
+  //     { label: "Leadership", href: "/team/leadership" },
+  //     { label: "Experts", href: "/team/experts" },
+  //   ],
+  //   More: [
+  //     { label: "Gallery", href: "/gallery" },
+  //     { label: "Client's Blog", href: "/stories" },
+  //     { label: "Achievements", href: "/achievements" },
+  //     { label: "Events", href: "/events" },
+  //     { label: "News", href: "/news" },
+  //     { label: "Courses", href: "/courses" },
+  //     { label: "Usual", href: "/usual" },
+  //     { label: "Pad Counter", href: "/pad" },
+  //     { label: "Upload", href: "/upload" },
+  //   ],
+  // };
 
   const renderDropdown = (category: string) => (
     <motion.div
