@@ -36,16 +36,16 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
 
   const dropdownItems: DropdownItems = {
     "Med-Tech": [
-      { label: "Telemedicine", href: "/services/telemedicine" },
+      { label: "Telemedicine", href: "/static/telemedicine" },
       {
         label: "AI Assisted Diagnostics",
-        href: "/services/ai-assisted-diagnostics",
+        href: "/static/ai-assisted-diagnostics",
       },
       {
         label: "Portable Patient Monitoring",
-        href: "/services/portable-patient-monitoring",
+        href: "/static/portable-patient-monitoring",
       },
-      { label: "R&D Med-Tech", href: "/services/research" },
+      { label: "R&D Med-Tech", href: "/static/research" },
     ],
     "Security & Defense": [
       { label: "Drone Technology", href: "#drone-technology" },
