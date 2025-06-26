@@ -3,8 +3,7 @@
 import React from "react";
 import Head from "next/head";
 import { motion, Variants } from "framer-motion";
-import Header from "../../components/Header";
-import Hero from "../../components/Hero";
+import Hero from "./Hero";
 import InnovationCard from "../../components/InnovationCard";
 import ProjectCard from "../../components/ProjectCard";
 import ContactForm from "../../components/ContactForm";
@@ -69,7 +68,6 @@ const RDPage = () => {
         />
       </Head>
 
-      <Header />
       <motion.section
         initial="hidden"
         animate="visible"
