@@ -87,15 +87,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export const metadata = {
-  title: "AI-Assisted Diagnosis",
-  description: "Revolutionize healthcare with AI-powered diagnostic tools.",
-  openGraph: {
-    title: "AI-Assisted Diagnosis",
-    description: "Revolutionize healthcare with AI-powered diagnostic tools.",
-    images: "/images/ai-diagnosis-hero.png",
-  },
-};
 
 const AIAssistedDiagnosisPage = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
