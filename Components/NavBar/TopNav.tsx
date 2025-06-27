@@ -35,92 +35,137 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
   }, []);
 
   const dropdownItems: DropdownItems = {
-    Services: [
-      { label: "Services Overview", href: "/services" },
-      { label: "Telemedicine", href: "/services/telemedicine" },
+    "Med-Tech": [
+      { label: "Telemedicine", href: "/static/telemedicine" },
       {
         label: "AI Assisted Diagnostics",
-        href: "/services/ai-assisted-diagnostics",
+        href: "/static/ai-assisted-diagnostics",
       },
       {
         label: "Portable Patient Monitoring",
-        href: "/services/portable-patient-monitoring",
+        href: "/static/portable-patient-monitoring",
       },
-      { label: "R&D Med-Tech", href: "/services/research" },
+      { label: "R&D Med-Tech", href: "/static/research" },
     ],
-    Products: [
-      { label: "Products Overview", href: "/products" },
-      { label: "Drone Technology", href: "/products/drone-technology" },
-      { label: "Submarine Technology", href: "/products/submarine-technology" },
+    "Security & Defense": [
+      { label: "Drone Technology", href: "/static/drone-technology" },
+      { label: "Submarine Technology", href: "/static/submarine-technology" },
       {
         label: "Communication Technology",
-        href: "/products/communication-technology",
+        href: "/static/communication-technology",
       },
-      {
-        label: "R&D Security & Defense",
-        href: "/products/rnd-security-defense",
-      },
+      { label: "R&D Security & Defense", href: "/static/rnd-security-defense" },
     ],
-    Tutorials: [
-      { label: "Tutorials Overview", href: "/tutorials" },
-      {
-        label: "Chatbots Development",
-        href: "/tutorials/chatbots-development",
-      },
+    "AI & ML Agents": [
+      { label: "Chatbots Development", href: "/static/chatbots-development" },
       {
         label: "Agentic AI Development",
-        href: "/tutorials/agentic-ai-development",
+        href: "/static/agentic-ai-development",
       },
-      { label: "AI/ML Agents", href: "/tutorials/ai-ml-agents" },
-      { label: "R&D on AI/ML Products", href: "/tutorials/rnd-ai-ml-products" },
+      { label: "AI/ML Agents", href: "#ai-ml-agents" },
+      { label: "R&D on AI/ML Products", href: "/static/rnd-ai-ml-products" },
     ],
-    Blogs: [
-      { label: "Blogs Overview", href: "/blogs" },
-      { label: "Web/App Development", href: "/blogs/web-app-development" },
-      { label: "Design/IT Consulting", href: "/blogs/design-it-consulting" },
+    "Web/App": [
+      { label: "Web/App Development", href: "/static/web-app-development" },
+      { label: "Design/IT Consulting", href: "/static/design-it-consulting" },
       {
-        label: "AI/ML Agents Development",
-        href: "/blogs/ai-ml-agents-development",
+        label: "AI/ML Agents or MicroAgents Development",
+        href: "/static/ai-ml-agents-or-microagents-development",
       },
       {
-        label: "STEAM/IOT/Robotics Visualization",
-        href: "/blogs/steam-iot-robotics-visualization",
+        label: "STEAM/IOT/Robotics Data Visualization",
+        href: "/static/steam-iot-robotics-data-visualization",
       },
-    ],
-    Books: [
-      { label: "Books Overview", href: "/books" },
-      { label: "Technology Books", href: "/books/technology" },
-      { label: "AI and ML Books", href: "/books/ai-ml" },
-      { label: "Security & Defense Books", href: "/books/security-defense" },
-    ],
-    Shop: [
-      { label: "Shop Overview", href: "/shop" },
-      { label: "Tech Gadgets", href: "/shop/gadgets" },
-      { label: "Educational Kits", href: "/shop/educational-kits" },
-      { label: "Software Licenses", href: "/shop/software" },
-    ],
-    About: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Mission", href: "/about/mission" },
-      { label: "Our Vision", href: "/about/vision" },
-    ],
-    Team: [
-      { label: "Our Team", href: "/team" },
-      { label: "Leadership", href: "/team/leadership" },
-      { label: "Experts", href: "/team/experts" },
-    ],
-    More: [
-      { label: "Gallery", href: "/gallery" },
-      { label: "Client's Blog", href: "/stories" },
-      { label: "Achievements", href: "/achievements" },
-      { label: "Events", href: "/events" },
-      { label: "News", href: "/news" },
-      { label: "Courses", href: "/courses" },
-      { label: "Usual", href: "/usual" },
-      { label: "Pad Counter", href: "/pad" },
-      { label: "Upload", href: "/upload" },
     ],
   };
+
+  // const dropdownItems: DropdownItems = {
+  //   Services: [
+  //     { label: "Services Overview", href: "/services" },
+  //     { label: "Telemedicine", href: "/services/telemedicine" },
+  //     {
+  //       label: "AI Assisted Diagnostics",
+  //       href: "/services/ai-assisted-diagnostics",
+  //     },
+  //     {
+  //       label: "Portable Patient Monitoring",
+  //       href: "/services/portable-patient-monitoring",
+  //     },
+  //     { label: "R&D Med-Tech", href: "/services/research" },
+  //   ],
+  //   Products: [
+  //     { label: "Products Overview", href: "/products" },
+  //     { label: "Drone Technology", href: "/products/drone-technology" },
+  //     { label: "Submarine Technology", href: "/products/submarine-technology" },
+  //     {
+  //       label: "Communication Technology",
+  //       href: "/products/communication-technology",
+  //     },
+  //     {
+  //       label: "R&D Security & Defense",
+  //       href: "/products/rnd-security-defense",
+  //     },
+  //   ],
+  //   Tutorials: [
+  //     { label: "Tutorials Overview", href: "/tutorials" },
+  //     {
+  //       label: "Chatbots Development",
+  //       href: "/tutorials/chatbots-development",
+  //     },
+  //     {
+  //       label: "Agentic AI Development",
+  //       href: "/tutorials/agentic-ai-development",
+  //     },
+  //     { label: "AI/ML Agents", href: "/tutorials/ai-ml-agents" },
+  //     { label: "R&D on AI/ML Products", href: "/tutorials/rnd-ai-ml-products" },
+  //   ],
+  //   Blogs: [
+  //     { label: "Blogs Overview", href: "/blogs" },
+  //     { label: "Web/App Development", href: "/blogs/web-app-development" },
+  //     { label: "Design/IT Consulting", href: "/blogs/design-it-consulting" },
+  //     {
+  //       label: "AI/ML Agents Development",
+  //       href: "/blogs/ai-ml-agents-development",
+  //     },
+  //     {
+  //       label: "STEAM/IOT/Robotics Visualization",
+  //       href: "/blogs/steam-iot-robotics-visualization",
+  //     },
+  //   ],
+  //   Books: [
+  //     { label: "Books Overview", href: "/books" },
+  //     { label: "Technology Books", href: "/books/technology" },
+  //     { label: "AI and ML Books", href: "/books/ai-ml" },
+  //     { label: "Security & Defense Books", href: "/books/security-defense" },
+  //   ],
+  //   Shop: [
+  //     { label: "Shop Overview", href: "/shop" },
+  //     { label: "Tech Gadgets", href: "/shop/gadgets" },
+  //     { label: "Educational Kits", href: "/shop/educational-kits" },
+  //     { label: "Software Licenses", href: "/shop/software" },
+  //   ],
+  //   About: [
+  //     { label: "About Us", href: "/about" },
+  //     { label: "Our Mission", href: "/about/mission" },
+  //     { label: "Our Vision", href: "/about/vision" },
+  //   ],
+  //   Team: [
+  //     { label: "Our Team", href: "/team" },
+  //     { label: "Leadership", href: "/team/leadership" },
+  //     { label: "Experts", href: "/team/experts" },
+  //   ],
+  //   More: [
+  //     { label: "Gallery", href: "/gallery" },
+  //     { label: "Client's Blog", href: "/stories" },
+  //     { label: "Achievements", href: "/achievements" },
+  //     { label: "Events", href: "/events" },
+  //     { label: "News", href: "/news" },
+  //     { label: "Courses", href: "/courses" },
+  //     { label: "Usual", href: "/usual" },
+  //     { label: "Pad Counter", href: "/pad" },
+  //     { label: "Upload", href: "/upload" },
+  //   ],
+  // };
 
   const renderDropdown = (category: string) => (
     <motion.div
@@ -161,7 +206,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-[rgba(30,58,138,0.9)] backdrop-blur-lg shadow-lg"
-          : "bg-transparent"
+          : "bg-[rgba(30,58,138,0.9)] backdrop-blur-lg shadow-lg"
       }`}
     >
       <div className="w-full px-4 py-4 pt-8 mx-auto sm:px-6 lg:px-8">
@@ -194,7 +239,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
               <div key={category} className="relative">
                 <motion.button
                   className={`flex items-center px-4 py-2 space-x-1 text-2xl font-semibold transition-all duration-300 rounded-lg ${
-                    isScrolled ? "text-white/90" : "text-gray-900/90"
+                    isScrolled ? "text-white/90" : "text-white/90"
                   } hover:bg-white/10`}
                   whileHover={{ scale: 1.05 }}
                   onClick={() =>
