@@ -50,25 +50,31 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
     "Security & Defense": [
       { label: "Drone Technology", href: "/static/drone-technology" },
       { label: "Submarine Technology", href: "/static/submarine-technology" },
-      { label: "Communication Technology", href: "#communication-technology" },
-      { label: "R&D Security & Defense", href: "#rnd-security-defense" },
+      {
+        label: "Communication Technology",
+        href: "/static/communication-technology",
+      },
+      { label: "R&D Security & Defense", href: "/static/rnd-security-defense" },
     ],
     "AI & ML Agents": [
-      { label: "Chatbots Development", href: "#chatbots-development" },
-      { label: "Agentic AI Development", href: "#agentic-ai-development" },
+      { label: "Chatbots Development", href: "/static/chatbots-development" },
+      {
+        label: "Agentic AI Development",
+        href: "/static/agentic-ai-development",
+      },
       { label: "AI/ML Agents", href: "#ai-ml-agents" },
-      { label: "R&D on AI/ML Products", href: "#rnd-ai-ml-products" },
+      { label: "R&D on AI/ML Products", href: "/static/rnd-ai-ml-products" },
     ],
     "Web/App": [
-      { label: "Web/App Development", href: "#web-app-development" },
-      { label: "Design/IT Consulting", href: "#design-it-consulting" },
+      { label: "Web/App Development", href: "/static/web-app-development" },
+      { label: "Design/IT Consulting", href: "/static/design-it-consulting" },
       {
         label: "AI/ML Agents or MicroAgents Development",
-        href: "#ai-ml-agents-or-microagents-development",
+        href: "/static/ai-ml-agents-or-microagents-development",
       },
       {
         label: "STEAM/IOT/Robotics Data Visualization",
-        href: "#steam-iot-robotics-data-visualization",
+        href: "/static/steam-iot-robotics-data-visualization",
       },
     ],
   };
