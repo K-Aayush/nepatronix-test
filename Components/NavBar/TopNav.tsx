@@ -48,7 +48,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       { label: "R&D Med-Tech", href: "/static/research" },
     ],
     "Security & Defense": [
-      { label: "Drone Technology", href: "#drone-technology" },
+      { label: "Drone Technology", href: "/static/drone-technology" },
       { label: "Submarine Technology", href: "#submarine-technology" },
       { label: "Communication Technology", href: "#communication-technology" },
       { label: "R&D Security & Defense", href: "#rnd-security-defense" },
