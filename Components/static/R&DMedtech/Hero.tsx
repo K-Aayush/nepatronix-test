@@ -3,6 +3,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Button } from "@/Components/ui/button";
+import Image from "next/image";
 
 interface HeroProps {
   title: string;
@@ -21,7 +22,7 @@ const slideVariants: Variants = {
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText }) => {
   return (
-    <section className="relative py-32 text-white bg-gradient-to-b from-blue-950 to-gray-900 bg-opacity-10">
+    <section className="relative py-32 text-white bg-gradient-to-b from-blue-900 to-gray-800 bg-opacity-10">
       <div className="flex flex-col items-center gap-8 px-6 mx-auto max-w-7xl md:flex-row">
         <motion.div className="md:w-1/2" variants={slideVariants}>
           <h1 className="mb-4 text-5xl font-bold md:text-6xl">{title}</h1>
@@ -36,11 +37,14 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative flex items-center justify-center w-full h-64 rounded-lg bg-blue-800/30">
-            <span className="text-2xl font-semibold text-teal-400">
-              R&D Visualization
-            </span>
-          </div>
+          <Image
+            src={"/static/R&DmedTech.png"}
+            alt={title}
+            width={1200}
+            height={1200}
+            loading="eager"
+            className="object-cover w-[250px] h-auto mb-4 rounded-lg "
+          />
         </motion.div>
       </div>
     </section>

@@ -168,11 +168,10 @@ const PortablePatientMonitoringPage = () => {
                 <Image
                   src={feature.imgSrc}
                   alt={feature.title}
-                  width={100}
-                  height={100}
-                  className="object-cover rounded-md"
+                  width={1200}
+                  height={1200}
                   loading="eager"
-                  quality={100}
+                  className="object-cover w-[250px] h-auto mb-4 rounded-lg "
                 />
                 <div>
                   <h3 className="mb-2 text-2xl font-semibold text-gray-800">
