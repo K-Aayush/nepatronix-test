@@ -200,7 +200,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-[rgba(30,58,138,0.9)] backdrop-blur-lg shadow-lg"
-          : "bg-transparent"
+          : "bg-[rgba(30,58,138,0.9)] backdrop-blur-lg shadow-lg"
       }`}
     >
       <div className="w-full px-4 py-4 pt-8 mx-auto sm:px-6 lg:px-8">
@@ -233,7 +233,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
               <div key={category} className="relative">
                 <motion.button
                   className={`flex items-center px-4 py-2 space-x-1 text-2xl font-semibold transition-all duration-300 rounded-lg ${
-                    isScrolled ? "text-white/90" : "text-gray-900/90"
+                    isScrolled ? "text-white/90" : "text-white/90"
                   } hover:bg-white/10`}
                   whileHover={{ scale: 1.05 }}
                   onClick={() =>

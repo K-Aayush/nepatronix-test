@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="relative p-6 transition-shadow duration-300 bg-gray-800 rounded-lg shadow-md hover:shadow-xl"
+      className="relative flex flex-col items-center justify-between h-full p-6 overflow-hidden"
       variants={slideVariants}
       role="article"
     >
@@ -34,14 +34,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <Image
         src={imgSrc}
         alt={title}
-        width={80}
-        height={80}
-        className="object-cover mb-4 rounded-lg"
+        width={1200}
+        height={1200}
         loading="eager"
-        quality={100}
+        className="flex-1 object-cover w-full h-auto mb-4 rounded-lg "
       />
-      <h3 className="mb-2 text-lg font-semibold text-white">{title}</h3>
-      <p className="text-sm text-gray-300">{description}</p>
+      <div className="">
+        <h3 className="mb-2 text-lg font-semibold text-white">{title}</h3>
+        <p className="text-sm text-gray-300">{description}</p>
+      </div>
     </motion.div>
   );
 };

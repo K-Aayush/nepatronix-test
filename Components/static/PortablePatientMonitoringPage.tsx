@@ -83,15 +83,12 @@ const testimonials: Testimonial[] = [
 
 const PortablePatientMonitoringPage = () => {
   return (
-    <main
-      className="min-h-screen pt-[80px] bg-white"
-      style={{ paddingTop: "80px" }}
-    >
+    <main className="min-h-screen bg-white" style={{ paddingTop: "50px" }}>
       <AnalyticsRequester id="portable-patient-monitoring" />
 
       {/* Hero Section */}
       <motion.section
-        className="relative py-20 text-white bg-gradient-to-b from-orange-600 to-amber-500"
+        className="relative py-32 text-white bg-gradient-to-b from-orange-600 to-amber-500"
         initial="hidden"
         animate="visible"
         variants={slideVariants}

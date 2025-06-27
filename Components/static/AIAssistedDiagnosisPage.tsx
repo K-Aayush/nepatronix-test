@@ -87,7 +87,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-
 const AIAssistedDiagnosisPage = () => {
   const [currentFeature, setCurrentFeature] = useState(0);
 
@@ -100,15 +99,12 @@ const AIAssistedDiagnosisPage = () => {
   };
 
   return (
-    <main
-      className="min-h-screen pt-[80px] bg-gray-100"
-      style={{ paddingTop: "80px" }}
-    >
+    <main className="min-h-screen bg-gray-100" style={{ paddingTop: "50px" }}>
       <AnalyticsRequester id="ai-diagnosis" />
 
       {/* Hero Section */}
       <motion.section
-        className="py-20 text-white bg-gradient-to-b from-blue-900 to-cyan-700"
+        className="py-32 text-white bg-gradient-to-b from-blue-900 to-cyan-700"
         initial="hidden"
         animate="visible"
         variants={containerVariants}

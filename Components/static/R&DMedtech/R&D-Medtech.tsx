@@ -4,10 +4,8 @@ import React from "react";
 import Head from "next/head";
 import { motion, Variants } from "framer-motion";
 import Hero from "./Hero";
-import InnovationCard from "../../components/InnovationCard";
-import ProjectCard from "../../components/ProjectCard";
-import ContactForm from "../../components/ContactForm";
-import Footer from "../../components/Footer";
+import InnovationCard from "./InnovationCard";
+import ProjectCard from "./ProjectCard";
 
 const slideVariants: Variants = {
   hidden: { opacity: 0, y: 100 },
@@ -44,7 +42,7 @@ const projects = [
     title: "Smart Bio-Implants",
     description:
       "Creating biocompatible implants with real-time health monitoring capabilities.",
-    imgSrc: "/static/smart-implants.png",
+    imgSrc: "/static/smart-implants.jpg",
   },
   {
     title: "AI Telemedicine Platform",
@@ -56,10 +54,7 @@ const projects = [
 
 const RDPage = () => {
   return (
-    <main
-      className="min-h-screen pt-[80px] bg-gray-900"
-      style={{ paddingTop: "80px" }}
-    >
+    <main className="min-h-screen bg-gray-800" style={{ paddingTop: "50px" }}>
       <Head>
         <title>Nepatronix R&D - Innovating Med-Tech Solutions</title>
         <meta
@@ -143,11 +138,7 @@ const RDPage = () => {
         animate="visible"
         variants={slideVariants}
         aria-label="Collaborate with Us"
-      >
-        <ContactForm />
-      </motion.section>
-
-      <Footer />
+      ></motion.section>
     </main>
   );
 };

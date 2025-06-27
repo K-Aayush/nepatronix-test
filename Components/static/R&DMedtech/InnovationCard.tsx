@@ -26,7 +26,7 @@ const InnovationCard: React.FC<InnovationCardProps> = ({
 }) => {
   return (
     <motion.div
-      className="flex items-center gap-6 p-6 transition-shadow duration-300 rounded-lg shadow bg-blue-800/20 -md hover:shadow-lg"
+      className="flex flex-col items-center gap-6 p-6 transition-shadow duration-300 rounded-lg shadow md:flex-row bg-blue-800/20 -md hover:shadow-lg"
       variants={rotateVariants}
       initial="hidden"
       whileInView="visible"
@@ -36,11 +36,10 @@ const InnovationCard: React.FC<InnovationCardProps> = ({
       <Image
         src={imgSrc}
         alt={title}
-        width={100}
-        height={100}
-        className="object-cover rounded-md"
+        width={1200}
+        height={1200}
         loading="eager"
-        quality={100}
+        className="object-cover w-[250px] h-auto mb-4 rounded-lg "
       />
       <div>
         <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
