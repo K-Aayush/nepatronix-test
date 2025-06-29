@@ -1,105 +1,232 @@
 "use client";
 
-import PageLayout from "@/Components/layout/page-layout";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Plane,
+  Camera,
+  Radar,
+  Shield,
+  Zap,
+  Satellite,
+  Target,
+  Eye,
+  Navigation,
+  Award,
+} from "lucide-react";
+import Link from "next/link";
 import ServiceCard from "@/components/ui/service-card";
-import { Plane, Camera, Radar, Shield, Zap, Satellite } from "lucide-react";
 
 export default function DroneTechnologyPage() {
-  const services = [
+  const droneCapabilities = [
     {
       icon: Plane,
-      title: "Autonomous Flight Systems",
+      title: "Smart Flight Systems",
       description:
-        "Advanced autonomous flight control systems for military and civilian drone applications.",
+        "Advanced drone systems with 30km range, 6-hour flight time, and intelligent navigation for commercial applications.",
       features: [
-        "AI-powered navigation algorithms",
-        "Obstacle avoidance systems",
-        "Swarm coordination protocols",
-        "Weather-adaptive flight planning",
+        "Smart obstacle avoidance",
+        "High-precision GPS navigation",
+        "Fleet coordination technology",
+        "Weather-resistant flight planning",
+        "Automated mission scheduling",
+        "Real-time route optimization",
       ],
     },
     {
       icon: Camera,
-      title: "Surveillance & Reconnaissance",
+      title: "High-Performance Imaging",
       description:
-        "High-resolution imaging and surveillance systems for security and defense operations.",
+        "Cutting-edge imaging platforms with 4K video, thermal capabilities, and real-time data capture for diverse industries.",
       features: [
-        "Multi-spectral imaging systems",
+        "Multi-spectral imaging (RGB, IR)",
         "Real-time video streaming",
-        "Thermal imaging capabilities",
-        "Long-range surveillance options",
+        "Thermal imaging up to 10km range",
+        "Object detection algorithms",
+        "Low-light performance",
+        "Customizable imaging solutions",
       ],
     },
     {
       icon: Radar,
-      title: "Advanced Sensor Integration",
+      title: "Sensor Integration",
       description:
-        "Sophisticated sensor packages for comprehensive situational awareness and data collection.",
+        "Versatile sensor systems integrating LiDAR, radar, and environmental sensors for comprehensive data collection.",
       features: [
-        "LiDAR mapping systems",
-        "Electronic warfare sensors",
-        "Chemical detection equipment",
-        "Signal intelligence gathering",
+        "High-resolution LiDAR mapping",
+        "Environmental monitoring sensors",
+        "Air quality detection",
+        "Data fusion technology",
+        "Real-time analytics",
+        "Custom sensor configurations",
       ],
     },
     {
       icon: Shield,
-      title: "Counter-Drone Systems",
+      title: "Drone Safety Systems",
       description:
-        "Defensive technologies designed to detect, track, and neutralize unauthorized drones.",
+        "Robust safety and security features to protect operations, including geofencing and advanced encryption.",
       features: [
-        "RF detection and jamming",
-        "Kinetic interception systems",
-        "Cyber warfare capabilities",
-        "Automated threat assessment",
+        "Geofencing technology",
+        "Secure data transmission",
+        "Collision avoidance systems",
+        "Automated safety protocols",
+        "Regulatory compliance features",
+        "Remote monitoring integration",
       ],
     },
     {
       icon: Zap,
-      title: "Combat Drone Platforms",
+      title: "High-Efficiency Drones",
       description:
-        "Military-grade combat drones with precision strike capabilities and tactical advantages.",
+        "Reliable, high-performance drones designed for precision tasks with energy-efficient technology.",
       features: [
-        "Precision weaponry integration",
-        "Stealth technology features",
-        "Electronic countermeasures",
-        "Mission-critical reliability",
+        "High-capacity battery systems",
+        "Energy-efficient motors",
+        "Precision task execution",
+        "Durable composite materials",
+        "Encrypted control links",
+        "Customizable payload options",
       ],
     },
     {
       icon: Satellite,
-      title: "Communication Systems",
+      title: "Connectivity Solutions",
       description:
-        "Secure, long-range communication systems for drone operations in challenging environments.",
+        "Seamless, long-range communication systems with reliable data transmission for mission-critical operations.",
       features: [
-        "Satellite communication links",
-        "Encrypted data transmission",
-        "Mesh networking capabilities",
-        "Low-latency control systems",
+        "Long-range communication links",
+        "Encrypted data transfer (AES-256)",
+        "Mesh networking support",
+        "Low-latency controls (<50ms)",
+        "Redundant connectivity options",
+        "Cloud-based mission management",
       ],
     },
   ];
 
+  const nepatronixSpecs = [
+    { metric: "30km", label: "Max Range", description: "Operational radius" },
+    {
+      metric: "6hrs",
+      label: "Flight Time",
+      description: "Continuous operation",
+    },
+    {
+      metric: "10kg",
+      label: "Payload Capacity",
+      description: "Equipment weight",
+    },
+    {
+      metric: "99.5%",
+      label: "Reliability",
+      description: "Operational uptime",
+    },
+  ];
+
   return (
-    <PageLayout
-      title="Drone Technology"
-      subtitle="Cutting-edge unmanned aerial vehicle technology for defense, security, and tactical applications with advanced autonomous capabilities."
-      gradientClass="bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900"
-    >
-      <div className="container px-6 pb-24 mx-auto">
+    <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-blue-900 via-gray-900 to-zinc-900">
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        className="relative z-10 px-8 py-20 text-center"
+      >
+        <div className="inline-flex items-center gap-3 px-6 py-3 mb-8 font-mono border rounded bg-blue-500/20 border-blue-500/50">
+          <Target className="text-blue-400" size={20} />
+          <span className="text-blue-400">NEPATRONIX INNOVATION</span>
+        </div>
+
+        <h1 className="mb-8 font-mono text-6xl font-bold tracking-wider lg:text-8xl">
+          <span className="text-blue-400">DRONE</span>
+          <br />
+          <span className="text-white">TECHNOLOGY</span>
+        </h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="max-w-4xl mx-auto text-2xl font-light leading-relaxed tracking-wide md:text-3xl text-slate-200/90"
+        >
+          Nepatronix delivers cutting-edge drone solutions with 30km range,
+          smart navigation, and advanced imaging for industries like
+          agriculture, logistics, and surveying.
+        </motion.p>
+      </motion.div>
+
+      {/* Technical Specifications */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="container relative z-10 px-8 mx-auto mb-20"
+      >
+        <div className="max-w-6xl p-8 mx-auto border-l-4 border-blue-500 rounded-lg bg-slate-800/80 backdrop-blur-lg">
+          <h3 className="mb-6 font-mono text-2xl font-bold tracking-wide text-blue-400">
+            TECHNICAL SPECIFICATIONS
+          </h3>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+            {nepatronixSpecs.map((spec, index) => (
+              <div key={spec.label} className="text-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.8,
+                    delay: index * 0.1,
+                    type: "spring",
+                  }}
+                  className="mb-2 font-mono text-3xl font-bold text-blue-400"
+                >
+                  {spec.metric}
+                </motion.div>
+                <div className="text-xl font-semibold text-slate-300">
+                  {spec.label}
+                </div>
+                <div className="text-lg text-slate-400">{spec.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Capabilities Grid */}
+      <div className="container relative z-10 px-8 pb-24 mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="mb-6 font-mono text-4xl font-bold tracking-wider text-white md:text-6xl">
+            INNOVATIVE SOLUTIONS
+          </h2>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-1 bg-blue-500"></div>
+            <Eye className="text-blue-500" size={24} />
+            <div className="w-12 h-1 bg-blue-500"></div>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 max-w-7xl">
-          {services.map((service, index) => (
+          {droneCapabilities.map((capability, index) => (
             <ServiceCard
-              key={service.title}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              features={service.features}
+              key={capability.title}
+              icon={capability.icon}
+              title={capability.title}
+              description={capability.description}
+              features={capability.features}
               index={index}
+              variant="submarine"
             />
           ))}
         </div>
       </div>
-    </PageLayout>
+    </div>
   );
 }

@@ -80,7 +80,7 @@ export default function ServiceCard({
         <h3 className="text-2xl font-bold text-white">{title}</h3>
       </div>
 
-      <p className="mb-6 text-lg leading-relaxed text-white/80">
+      <p className="mb-6 text-xl leading-relaxed text-white/80">
         {description}
       </p>
 
@@ -92,7 +92,7 @@ export default function ServiceCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 + idx * 0.05, duration: 0.4 }}
-            className="flex items-center gap-3 transition-colors text-white/70 hover:text-white"
+            className="flex items-center gap-3 text-lg transition-colors text-white/70 hover:text-white"
           >
             <div className={`w-2 h-2 ${iconColors[variant]} rounded-full`} />
             {feature}
