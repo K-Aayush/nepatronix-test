@@ -165,7 +165,7 @@ export default function ServiceCard({
         </h3>
       </div>
 
-      <p className={`${styles.description} text-lg mb-8 leading-relaxed`}>
+      <p className={`${styles.description} text-xl mb-8 leading-relaxed`}>
         {description}
       </p>
 
@@ -177,7 +177,7 @@ export default function ServiceCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 + idx * 0.05, duration: 0.4 }}
-            className={`${styles.feature} text-base flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-all duration-200 cursor-pointer`}
+            className={`${styles.feature} text-xl flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-all duration-200 cursor-pointer`}
           >
             <div className="w-2 h-2 bg-current rounded-full opacity-60"></div>
             {feature}
