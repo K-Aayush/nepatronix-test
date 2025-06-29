@@ -30,10 +30,10 @@ export default function ServiceCard({
         <div className="p-3 bg-white/20 rounded-xl">
           <Icon size={32} className="text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-white">{title}</h3>
+        <h3 className="text-3xl font-bold text-white">{title}</h3>
       </div>
 
-      <p className="mb-6 text-lg leading-relaxed text-white/80">
+      <p className="mb-6 text-xl leading-relaxed text-white/80">
         {description}
       </p>
 
@@ -41,7 +41,7 @@ export default function ServiceCard({
         {features.map((feature, idx) => (
           <li
             key={idx}
-            className="flex items-start gap-2 text-lg text-white/70"
+            className="flex items-start gap-2 text-xl text-white/70"
           >
             <span className="mt-1 text-emerald-400">•</span>
             {feature}
