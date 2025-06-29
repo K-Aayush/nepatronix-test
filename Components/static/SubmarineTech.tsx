@@ -92,7 +92,7 @@ export default function SubmarineTechnologyPage() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Underwater Bubble Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
@@ -157,17 +157,6 @@ export default function SubmarineTechnologyPage() {
         transition={{ duration: 0.8 }}
         className="relative z-10"
       >
-        {/* Navigation */}
-        <nav className="p-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-3 text-xl font-medium text-blue-300 transition-colors hover:text-white"
-          >
-            <ArrowLeft size={24} />
-            Surface to Base
-          </Link>
-        </nav>
-
         {/* Hero Section with Submarine Silhouette */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

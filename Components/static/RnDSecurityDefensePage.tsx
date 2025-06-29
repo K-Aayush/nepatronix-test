@@ -92,7 +92,7 @@ export default function RnDSecurityDefensePage() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-red-900 via-orange-900 to-amber-900">
+    <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-red-900 via-orange-900 to-amber-900">
       {/* Tactical Grid Overlay */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -156,17 +156,6 @@ export default function RnDSecurityDefensePage() {
         transition={{ duration: 0.8 }}
         className="relative z-10"
       >
-        {/* Navigation */}
-        <nav className="p-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-3 text-xl font-medium tracking-wide text-red-300 transition-colors hover:text-white"
-          >
-            <ArrowLeft size={24} />
-            MISSION ABORT
-          </Link>
-        </nav>
-
         {/* Hero Section with Defense Shield */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

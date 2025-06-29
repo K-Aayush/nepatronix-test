@@ -92,7 +92,7 @@ export default function CommunicationTechnologyPage() {
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900">
+    <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-emerald-900 via-green-900 to-teal-900">
       {/* Radio Wave Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(5)].map((_, i) => (
@@ -168,17 +168,6 @@ export default function CommunicationTechnologyPage() {
         transition={{ duration: 0.8 }}
         className="relative z-10"
       >
-        {/* Navigation */}
-        <nav className="p-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-3 text-xl font-medium transition-colors text-emerald-300 hover:text-white"
-          >
-            <ArrowLeft size={24} />
-            End Transmission
-          </Link>
-        </nav>
-
         {/* Hero Section with Communication Tower */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
