@@ -12,7 +12,6 @@ import {
   Target,
   Radar,
 } from "lucide-react";
-import Link from "next/link";
 import ServiceCard from "@/components/ui/service-card";
 
 export default function RnDSecurityDefensePage() {

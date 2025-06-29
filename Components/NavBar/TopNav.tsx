@@ -62,7 +62,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
         label: "Agentic AI Development",
         href: "/static/agentic-ai-development",
       },
-      { label: "AI/ML Agents", href: "#ai-ml-agents" },
+      { label: "AI/ML Agents", href: "/static/ai-ml-agents" },
       { label: "R&D on AI/ML Products", href: "/static/rnd-ai-ml-products" },
     ],
     "Web/App": [

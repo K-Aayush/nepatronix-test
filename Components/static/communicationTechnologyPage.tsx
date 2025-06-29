@@ -12,7 +12,6 @@ import {
   Radar,
   Zap,
 } from "lucide-react";
-import Link from "next/link";
 import ServiceCard from "@/components/ui/service-card";
 
 export default function CommunicationTechnologyPage() {

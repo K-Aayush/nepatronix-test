@@ -14,7 +14,7 @@ import {
   Microscope,
 } from "lucide-react";
 import Link from "next/link";
-import ServiceCard from "@/components/ui/service-card";
+import ServiceCard from "@/Components/ui/service-card";
 
 export default function AIAssistedDiagnosticsPage() {
   const services = [
