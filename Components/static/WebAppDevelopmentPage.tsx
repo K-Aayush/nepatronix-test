@@ -117,7 +117,7 @@ export default function WebAppDevelopmentPage() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 px-6 py-8 mx-auto max-w-7xl">
+      <div className="relative z-10 px-6 py-8 mx-auto max-w-[1280px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -164,7 +164,7 @@ export default function WebAppDevelopmentPage() {
             </div>
           </div>
 
-          <div className="p-6 font-mono text-sm leading-relaxed">
+          <div className="p-6 font-mono text-lg leading-relaxed">
             <div className="space-y-2">
               <div>
                 <span className="text-purple-400">import</span>{" "}
@@ -275,10 +275,10 @@ export default function WebAppDevelopmentPage() {
                   className="object-contain w-full h-64 transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="flex flex-col p-4">
-                  <h3 className="mb-2 text-2xl font-semibold text-white">
+                  <h3 className="mb-2 text-3xl font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="mb-4 text-lg text-gray-300">
+                  <p className="mb-4 text-xl text-gray-300">
                     {item.description}
                   </p>
                   <Link
@@ -320,11 +320,11 @@ export default function WebAppDevelopmentPage() {
                       className="w-4 h-4 rounded-full"
                       style={{ backgroundColor: tech.color }}
                     ></div>
-                    <span className="text-xl font-medium text-white">
+                    <span className="text-2xl font-medium text-white">
                       {tech.name}
                     </span>
                   </div>
-                  <div className="w-24 h-2 bg-gray-700 rounded-full">
+                  <div className="w-48 h-2 bg-gray-700 rounded-full">
                     <div
                       className="h-2 transition-all duration-500 rounded-full"
                       style={{
@@ -366,12 +366,12 @@ export default function WebAppDevelopmentPage() {
                     className="object-cover w-24 h-24 rounded"
                   />
                   <div>
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-semibold text-white">
+                    <div className="flex items-start justify-between max-w-2xl mb-2">
+                      <h3 className="text-2xl font-semibold text-white">
                         {project.name}
                       </h3>
                       <span
-                        className={`px-3 py-1 rounded-full text-sm font-medium ${
+                        className={`px-3 py-1 rounded-full text-lg font-medium ${
                           project.status === "Completed"
                             ? "bg-green-500/20 text-green-400"
                             : project.status === "In Progress"
@@ -382,7 +382,7 @@ export default function WebAppDevelopmentPage() {
                         {project.status}
                       </span>
                     </div>
-                    <div className="mb-2 text-lg text-gray-400">
+                    <div className="mb-2 text-xl text-gray-400">
                       {project.type}
                     </div>
                     <div className="mb-2 text-lg text-gray-300">
@@ -392,7 +392,7 @@ export default function WebAppDevelopmentPage() {
                       {project.tech.map((t, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 text-sm text-gray-300 bg-gray-700 rounded"
+                          className="px-2 py-1 text-lg text-gray-300 bg-gray-700 rounded"
                         >
                           {t}
                         </span>

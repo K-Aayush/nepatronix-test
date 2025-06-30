@@ -9,9 +9,6 @@ import {
   TrendingUp,
   Shield,
   Wrench,
-  Code,
-  Lightbulb,
-  Settings,
   Briefcase,
 } from "lucide-react";
 import Link from "next/link";
@@ -75,20 +72,9 @@ export default function DesignITConsultingPage() {
   ];
 
   return (
-    <div className="min-h-screen text-gray-900 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
-      {/* Navigation */}
-      <nav className="p-6">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-lg text-blue-600 transition-colors hover:text-blue-800"
-        >
-          <ArrowLeft size={20} />
-          Back to Home
-        </Link>
-      </nav>
-
+    <div className="min-h-screen py-32 text-gray-900 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
       {/* Consulting Office Layout */}
-      <div className="px-6 py-8 mx-auto max-w-7xl">
+      <div className="px-6 py-8 mx-auto max-w-[1280px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,7 +83,7 @@ export default function DesignITConsultingPage() {
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 mb-8 bg-blue-100 rounded-full">
             <Briefcase className="text-blue-600" size={24} />
-            <span className="font-medium text-blue-800">
+            <span className="text-lg font-medium text-blue-800">
               Professional Consulting Services
             </span>
           </div>
@@ -110,7 +96,7 @@ export default function DesignITConsultingPage() {
             <span className="text-gray-800">Consulting</span>
           </h1>
 
-          <p className="max-w-4xl mx-auto text-xl leading-relaxed text-gray-600">
+          <p className="max-w-4xl mx-auto text-2xl leading-relaxed text-gray-600">
             Strategic technology consulting and design services to transform
             your business operations and user experiences
           </p>
@@ -130,17 +116,17 @@ export default function DesignITConsultingPage() {
                 <area.icon size={32} className="text-white" />
               </div>
 
-              <h3 className="mb-4 text-xl font-bold text-gray-900">
+              <h3 className="mb-4 text-2xl font-bold text-gray-900">
                 {area.title}
               </h3>
 
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-600">
+                    <span className="text-xl text-gray-600">
                       Clients Served
                     </span>
-                    <span className="font-bold text-blue-600">
+                    <span className="text-lg font-bold text-blue-600">
                       {area.clients}
                     </span>
                   </div>
@@ -156,8 +142,8 @@ export default function DesignITConsultingPage() {
 
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-600">Satisfaction</span>
-                    <span className="font-bold text-green-600">
+                    <span className="text-xl text-gray-600 ">Satisfaction</span>
+                    <span className="text-lg font-bold text-green-600">
                       {area.satisfaction}%
                     </span>
                   </div>
@@ -205,14 +191,14 @@ export default function DesignITConsultingPage() {
                   </div>
 
                   <div className="text-center">
-                    <h3 className="mb-2 text-xl font-bold text-gray-900">
+                    <h3 className="mb-2 text-2xl font-bold text-gray-900">
                       {step.phase}
                     </h3>
-                    <p className="mb-4 text-sm font-medium text-blue-600">
+                    <p className="mb-4 text-xl font-medium text-blue-600">
                       {step.duration}
                     </p>
 
-                    <ul className="space-y-1 text-sm text-gray-600">
+                    <ul className="space-y-1 text-lg text-gray-600 text-start">
                       {step.activities.map((activity, i) => (
                         <li
                           key={i}
@@ -275,10 +261,12 @@ export default function DesignITConsultingPage() {
                 <service.icon size={24} className="text-white" />
               </div>
 
-              <h3 className="mb-3 text-xl font-bold text-gray-900">
+              <h3 className="mb-3 text-2xl font-bold text-gray-900">
                 {service.title}
               </h3>
-              <p className="leading-relaxed text-gray-600">{service.desc}</p>
+              <p className="text-xl leading-relaxed text-gray-600">
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -298,12 +286,11 @@ export default function DesignITConsultingPage() {
             and achieve your technology goals
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="px-8 py-4 text-lg font-semibold text-blue-600 transition-colors bg-white rounded-full hover:bg-blue-50">
-              Schedule Consultation
-            </button>
-            <button className="px-8 py-4 text-lg font-semibold text-white transition-colors border-2 border-white rounded-full hover:bg-white/10">
-              View Case Studies
-            </button>
+            <Link href={"/contact"}>
+              <button className="px-8 py-4 text-lg font-semibold text-blue-600 transition-colors bg-white rounded-full hover:bg-blue-50">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
