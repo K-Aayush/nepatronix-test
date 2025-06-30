@@ -6,6 +6,7 @@ import { motion, Variants } from "framer-motion";
 import ThemeButton2 from "./ThemeButton2";
 
 const ProductCard = ({ data }: { data: any }) => {
+  console.log(data);                                                  
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {

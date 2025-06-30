@@ -5,6 +5,7 @@ import ProductCard from "../Reusables/ProductCard";
 
 const HomeProducts = async () => {
   const data = await getLists("products", 0, 8);
+  
 
   return (
     <section className="w-full  text-[20px]  text-center relative  py-20 overflow-hidden bg-gradient-to-b from-black via-purple-900 to-black">
