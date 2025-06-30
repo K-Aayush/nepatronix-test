@@ -90,7 +90,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
   ];
 
   return (
-    <div className="relative min-h-screen text-white bg-gradient-to-br from-orange-900 via-red-900 to-pink-900">
+    <div className="relative min-h-screen py-32 text-white bg-gradient-to-br from-orange-900 via-red-900 to-pink-900">
       {/* Microservices Grid Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid h-full grid-cols-12 gap-2 p-8 grid-rows-8">
@@ -111,17 +111,6 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
           ))}
         </div>
       </div>
-
-      {/* Navigation */}
-      <nav className="relative z-10 p-6">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-lg text-orange-300 transition-colors hover:text-white"
-        >
-          <ArrowLeft size={20} />
-          Back to Home
-        </Link>
-      </nav>
 
       {/* Microservices Architecture Layout */}
       <div className="relative z-10 px-6 py-8 mx-auto max-w-7xl">
