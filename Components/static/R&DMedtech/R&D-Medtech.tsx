@@ -80,7 +80,7 @@ const RDPage = () => {
         className="px-6 py-16 bg-gray-800/50"
         aria-label="R&D Innovations"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           <motion.h2
             className="mb-12 text-3xl font-bold text-center text-white"
             initial={{ opacity: 0 }}

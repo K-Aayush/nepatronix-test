@@ -119,7 +119,7 @@ export default function RnDAIMLProductsPage() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 mb-8 border rounded-full bg-rose-500/20 border-rose-400/30">
           <Award className="text-rose-400" size={24} />
-          <span className="font-medium text-rose-300">
+          <span className="text-lg font-medium text-rose-300">
             Award-Winning AI Research
           </span>
         </div>

@@ -287,7 +287,7 @@ export default function RnDSecurityDefensePage() {
                 >
                   3
                 </motion.div>
-                <div className="mt-2 text-sm text-red-300/70">ELEVATED</div>
+                <div className="mt-2 text-lg text-red-300/70">ELEVATED</div>
               </div>
 
               <div className="p-6 text-center border bg-orange-500/10 rounded-2xl border-orange-400/20">
@@ -304,7 +304,7 @@ export default function RnDSecurityDefensePage() {
                 >
                   ACTIVE
                 </motion.div>
-                <div className="mt-2 text-sm text-orange-300/70">
+                <div className="mt-2 text-lg text-orange-300/70">
                   24/7 Monitoring
                 </div>
               </div>
@@ -323,7 +323,7 @@ export default function RnDSecurityDefensePage() {
                 >
                   SECURE
                 </motion.div>
-                <div className="mt-2 text-sm text-amber-300/70">
+                <div className="mt-2 text-lg text-amber-300/70">
                   All Systems
                 </div>
               </div>
@@ -342,7 +342,7 @@ export default function RnDSecurityDefensePage() {
                 >
                   47
                 </motion.div>
-                <div className="mt-2 text-sm text-yellow-300/70">
+                <div className="mt-2 text-lg text-yellow-300/70">
                   In Progress
                 </div>
               </div>

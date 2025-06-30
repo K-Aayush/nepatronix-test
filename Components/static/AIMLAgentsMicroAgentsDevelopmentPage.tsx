@@ -1,19 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Bot,
-  Puzzle,
-  Zap,
-  Network,
-  Cog,
-  Target,
-  Cpu,
-  Code,
-  Layers,
-  Activity,
-} from "lucide-react";
+import { Bot, Puzzle, Activity } from "lucide-react";
 import Link from "next/link";
 
 export default function AIMLAgentsMicroAgentsDevelopmentPage() {
@@ -153,7 +141,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
               key={metric.metric}
               className="p-6 border bg-black/30 backdrop-blur-lg rounded-2xl border-orange-400/30"
             >
-              <div className="mb-2 text-sm text-orange-300">
+              <div className="mb-2 text-lg text-orange-300">
                 {metric.metric}
               </div>
               <motion.div
@@ -165,7 +153,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
                 {metric.value}
               </motion.div>
               <div
-                className={`text-sm ${
+                className={`text-lg ${
                   metric.change.startsWith("+")
                     ? "text-green-400"
                     : "text-red-400"
@@ -208,11 +196,11 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
 
                 {/* Agent Info */}
                 <div className="text-center">
-                  <div className="mb-1 text-xs text-orange-300">{agent.id}</div>
-                  <div className="mb-1 text-sm font-semibold text-white">
+                  <div className="mb-1 text-sm text-orange-300">{agent.id}</div>
+                  <div className="mb-1 text-lg font-semibold text-white">
                     {agent.name}
                   </div>
-                  <div className="mb-3 text-xs text-gray-400">{agent.type}</div>
+                  <div className="mb-3 text-sm text-gray-400">{agent.type}</div>
 
                   {/* Load Indicator */}
                   <div className="w-full h-2 mb-2 bg-gray-700 rounded-full">
@@ -229,7 +217,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
                       }`}
                     />
                   </div>
-                  <div className="text-xs text-gray-400">
+                  <div className="text-sm text-gray-400">
                     {agent.load}% load
                   </div>
                 </div>
@@ -300,8 +288,10 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
                   className="flex items-center justify-between p-4 border rounded-lg bg-black/30 border-orange-400/20"
                 >
                   <div>
-                    <div className="font-semibold text-white">{type.type}</div>
-                    <div className="text-sm text-orange-300">{type.desc}</div>
+                    <div className="text-xl font-semibold text-white">
+                      {type.type}
+                    </div>
+                    <div className="text-lg text-orange-300">{type.desc}</div>
                   </div>
                   <div className="text-2xl font-bold text-orange-400">
                     {type.count}
@@ -324,7 +314,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
 
             {/* Real-time Chart Simulation */}
             <div className="h-48 p-4 mb-6 border rounded-lg bg-black/30 border-red-400/20">
-              <div className="mb-4 text-sm text-red-300">
+              <div className="mb-4 text-lg text-red-300">
                 Agent Performance (Real-time)
               </div>
               <div className="flex items-end justify-between h-32 gap-2">
@@ -363,7 +353,7 @@ export default function AIMLAgentsMicroAgentsDevelopmentPage() {
                 >
                   <span className="text-red-300">{metric.label}</span>
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-white">
+                    <span className="text-lg font-semibold text-white">
                       {metric.value}
                     </span>
                     <div

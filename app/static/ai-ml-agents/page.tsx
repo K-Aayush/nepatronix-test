@@ -1,7 +1,8 @@
+import AIMLAgentsMicroAgentsDevelopmentPage from "@/Components/static/AIMLAgentsMicroAgentsDevelopmentPage";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return <AIMLAgentsMicroAgentsDevelopmentPage />;
 };
 
 export default page;

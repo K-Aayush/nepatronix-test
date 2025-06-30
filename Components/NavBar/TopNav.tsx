@@ -90,10 +90,6 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       { label: "Web/App Development", href: "/static/web-app-development" },
       { label: "Design/IT Consulting", href: "/static/design-it-consulting" },
       {
-        label: "AI/ML Agents or MicroAgents Development",
-        href: "/static/ai-ml-agents-or-microagents-development",
-      },
-      {
         label: "STEAM/IOT/Robotics Data Visualization",
         href: "/static/steam-iot-robotics-data-visualization",
       },
@@ -106,7 +102,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className="absolute mt-2 border shadow-xl w-80 rounded-xl bg-white/40 backdrop-blur-lg border-white/20"
+      className="absolute mt-2 border shadow-xl w-[280px] rounded-xl bg-gray-500  border-white/20"
       style={{
         transformOrigin: "top",
         perspective: "1000px",
@@ -122,7 +118,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
           >
             <Link
               href={item.href}
-              className="block px-6 py-4 text-2xl font-semibold text-gray-600 transition-all duration-300 transform hover:bg-white/30 hover:translate-x-2"
+              className="block px-6 py-4 text-2xl font-semibold transition-all duration-300 transform text-white/80 hover:bg-white/30 hover:translate-x-2"
               onClick={() => setDropdown(null)}
             >
               {item.label}
@@ -143,7 +139,7 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
           : "bg-[rgba(30,58,138,0.9)] backdrop-blur-lg shadow-lg"
       }`}
     >
-      <div className="w-full px-4 py-4 pt-8 mx-auto sm:px-6 lg:px-8">
+      <div className="w-full px-4 py-10 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.div
             className="flex items-center"
@@ -198,8 +194,8 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
                 href="/contact"
                 className={`px-4 py-2 text-2xl font-semibold transition-all duration-300 rounded-lg ${
                   isScrolled
-                    ? "text-gray-400 bg-blue-500/80 hover:bg-blue-500"
-                    : "text-gray-900 bg-blue-500/80 hover:bg-blue-500"
+                    ? "text-white bg-blue-500/80 hover:bg-blue-500"
+                    : "text-white bg-blue-500/80 hover:bg-blue-500"
                 }`}
               >
                 Contact
@@ -216,17 +212,9 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
             whileTap={{ scale: 0.95 }}
           >
             {isOpen ? (
-              <FaTimes
-                className={`w-6 h-6 ${
-                  isScrolled ? "text-white" : "text-gray-900"
-                }`}
-              />
+              <FaTimes className={`w-6 h-6 text-white`} />
             ) : (
-              <FaBars
-                className={`w-6 h-6 ${
-                  isScrolled ? "text-white" : "text-gray-900"
-                }`}
-              />
+              <FaBars className={`w-6 h-6 text-white`} />
             )}
           </motion.button>
         </div>

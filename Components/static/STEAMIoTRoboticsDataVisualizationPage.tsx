@@ -24,6 +24,7 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
       status: "Operating",
       efficiency: 94,
       tasks: 1247,
+      progress: "Task Completed",
     },
     {
       id: "ROB-002",
@@ -31,6 +32,7 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
       status: "Scanning",
       efficiency: 98,
       tasks: 856,
+      progress: "In Progress",
     },
     {
       id: "ROB-003",
@@ -38,6 +40,7 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
       status: "Moving",
       efficiency: 87,
       tasks: 2134,
+      progress: "On Hold",
     },
     {
       id: "ROB-004",
@@ -45,6 +48,7 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
       status: "Idle",
       efficiency: 0,
       tasks: 0,
+      progress: "In Progress",
     },
   ];
 
@@ -222,7 +226,7 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
                         : "bg-gray-500"
                     }`}
                   ></div>
-                  <span className="capitalize text-lgteal-300 text-">
+                  <span className="text-lg capitalize teal-300 text-">
                     {stream.trend}
                   </span>
                 </div>
@@ -293,7 +297,9 @@ export default function STEAMIoTRoboticsDataVisualizationPage() {
                     <div className="text-2xl font-bold text-blue-400">
                       {robot.tasks}
                     </div>
-                    <div className="text-sm text-blue-300">Tasks Completed</div>
+                    <div className="text-lg text-blue-300">
+                      {robot.progress}
+                    </div>
                   </div>
                 </div>
               </motion.div>
