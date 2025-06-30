@@ -177,14 +177,14 @@ export default function ChatbotsDevelopmentPage() {
                     {solution.description}
                   </p>
 
-                  <h4 className="mb-4 text-xl font-semibold text-purple-300">
+                  <h4 className="mb-4 text-2xl font-semibold text-purple-300">
                     Key Capabilities:
                   </h4>
                   <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                     {solution.capabilities.map((capability, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                        <span className="text-lg text-purple-200">
+                        <span className="text-xl text-purple-200">
                           {capability}
                         </span>
                       </div>
@@ -224,7 +224,7 @@ export default function ChatbotsDevelopmentPage() {
         <h2 className="mb-12 text-4xl font-bold text-center text-white">
           Technical Capabilities
         </h2>
-        <div className="grid max-w-6xl grid-cols-1 gap-8 mx-auto md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-3">
           {technicalCapabilities.map((category, index) => (
             <motion.div
               key={category.category}
@@ -241,7 +241,7 @@ export default function ChatbotsDevelopmentPage() {
                 {category.technologies.map((tech, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2"></div>
-                    <span className="text-lg text-indigo-200">{tech}</span>
+                    <span className="text-xl text-indigo-200">{tech}</span>
                   </div>
                 ))}
               </div>

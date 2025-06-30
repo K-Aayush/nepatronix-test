@@ -92,7 +92,7 @@ export default function ServiceCard({
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 + idx * 0.05, duration: 0.4 }}
-            className="flex items-center gap-3 text-lg transition-colors text-white/70 hover:text-white"
+            className="flex items-center gap-3 text-xl transition-colors text-white/70 hover:text-white"
           >
             <div className={`w-2 h-2 ${iconColors[variant]} rounded-full`} />
             {feature}
