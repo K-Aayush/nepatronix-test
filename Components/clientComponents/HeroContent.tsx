@@ -69,8 +69,8 @@ const HeroContent: React.FC = () => {
           Your one-stop solution for cutting-edge services and products.
         </motion.p>
         <motion.a
-          href="#contact"
-          className="inline-block px-8 py-4 text-lg font-semibold text-white transition duration-300 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600"
+          href="/contact"
+          className="inline-block px-8 py-4 text-2xl font-semibold text-white transition duration-300 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

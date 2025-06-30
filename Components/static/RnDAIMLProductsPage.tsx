@@ -9,7 +9,7 @@ import {
   Brain,
   Award,
 } from "lucide-react";
-import ServiceCard from "@/components/ui/service-card";
+import ServiceCard from "../ui/service-card";
 
 export default function RnDAIMLProductsPage() {
   const researchProjects = [

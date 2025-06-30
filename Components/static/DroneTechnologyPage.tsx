@@ -15,7 +15,7 @@ import {
   Award,
 } from "lucide-react";
 import Link from "next/link";
-import ServiceCard from "@/components/ui/service-card";
+import ServiceCard from "../ui/service-card";
 
 export default function DroneTechnologyPage() {
   const droneCapabilities = [

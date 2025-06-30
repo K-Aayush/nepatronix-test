@@ -18,7 +18,7 @@ const HomeServ = async () => {
         <br />
         <br />
       </>
-      <div className="w-full flex justify-center gap-[30px] flex-wrap">
+      <div className="w-full flex justify-center gap-[30px]  flex-wrap">
         {Array.isArray(data) &&
           data?.map((item, idx) => (
             <LinkData link={`/services/${item?.link || item._id}`} key={idx}>

@@ -13,7 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
-import ServiceCard from "@/components/ui/service-card";
+import ServiceCard from "../ui/service-card";
 
 export default function SubmarineTechnologyPage() {
   const services = [
@@ -91,6 +91,9 @@ export default function SubmarineTechnologyPage() {
     },
   ];
 
+  const windowHeight =
+    typeof window !== "undefined" ? window.innerHeight : 1080;
+
   return (
     <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Underwater Bubble Animation */}
@@ -99,7 +102,7 @@ export default function SubmarineTechnologyPage() {
           <motion.div
             key={i}
             animate={{
-              y: [window.innerHeight + 50, -50],
+              y: [windowHeight + 50, -50],
               x: [0, Math.sin(i) * 100, 0],
               scale: [0.5, 1, 0.5],
             }}
