@@ -2,20 +2,13 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowLeft,
   FlaskRound as Flask,
-  Lightbulb,
   Rocket,
   Database,
-  Code,
   TestTube,
   Brain,
-  Cpu,
-  Zap,
   Award,
-  TrendingUp,
 } from "lucide-react";
-import Link from "next/link";
 import ServiceCard from "@/components/ui/service-card";
 
 export default function RnDAIMLProductsPage() {
