@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
@@ -24,6 +24,7 @@ interface DropdownItems {
 export default function TopNav({ setOpen, isOpen }: NavbarProps) {
   const [dropdown, setDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll effect
   useEffect(() => {
@@ -32,6 +33,26 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Handle outside click/touch to close dropdown
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
   }, []);
 
   const dropdownItems: DropdownItems = {
@@ -79,96 +100,9 @@ export default function TopNav({ setOpen, isOpen }: NavbarProps) {
     ],
   };
 
-  // const dropdownItems: DropdownItems = {
-  //   Services: [
-  //     { label: "Services Overview", href: "/services" },
-  //     { label: "Telemedicine", href: "/services/telemedicine" },
-  //     {
-  //       label: "AI Assisted Diagnostics",
-  //       href: "/services/ai-assisted-diagnostics",
-  //     },
-  //     {
-  //       label: "Portable Patient Monitoring",
-  //       href: "/services/portable-patient-monitoring",
-  //     },
-  //     { label: "R&D Med-Tech", href: "/services/research" },
-  //   ],
-  //   Products: [
-  //     { label: "Products Overview", href: "/products" },
-  //     { label: "Drone Technology", href: "/products/drone-technology" },
-  //     { label: "Submarine Technology", href: "/products/submarine-technology" },
-  //     {
-  //       label: "Communication Technology",
-  //       href: "/products/communication-technology",
-  //     },
-  //     {
-  //       label: "R&D Security & Defense",
-  //       href: "/products/rnd-security-defense",
-  //     },
-  //   ],
-  //   Tutorials: [
-  //     { label: "Tutorials Overview", href: "/tutorials" },
-  //     {
-  //       label: "Chatbots Development",
-  //       href: "/tutorials/chatbots-development",
-  //     },
-  //     {
-  //       label: "Agentic AI Development",
-  //       href: "/tutorials/agentic-ai-development",
-  //     },
-  //     { label: "AI/ML Agents", href: "/tutorials/ai-ml-agents" },
-  //     { label: "R&D on AI/ML Products", href: "/tutorials/rnd-ai-ml-products" },
-  //   ],
-  //   Blogs: [
-  //     { label: "Blogs Overview", href: "/blogs" },
-  //     { label: "Web/App Development", href: "/blogs/web-app-development" },
-  //     { label: "Design/IT Consulting", href: "/blogs/design-it-consulting" },
-  //     {
-  //       label: "AI/ML Agents Development",
-  //       href: "/blogs/ai-ml-agents-development",
-  //     },
-  //     {
-  //       label: "STEAM/IOT/Robotics Visualization",
-  //       href: "/blogs/steam-iot-robotics-visualization",
-  //     },
-  //   ],
-  //   Books: [
-  //     { label: "Books Overview", href: "/books" },
-  //     { label: "Technology Books", href: "/books/technology" },
-  //     { label: "AI and ML Books", href: "/books/ai-ml" },
-  //     { label: "Security & Defense Books", href: "/books/security-defense" },
-  //   ],
-  //   Shop: [
-  //     { label: "Shop Overview", href: "/shop" },
-  //     { label: "Tech Gadgets", href: "/shop/gadgets" },
-  //     { label: "Educational Kits", href: "/shop/educational-kits" },
-  //     { label: "Software Licenses", href: "/shop/software" },
-  //   ],
-  //   About: [
-  //     { label: "About Us", href: "/about" },
-  //     { label: "Our Mission", href: "/about/mission" },
-  //     { label: "Our Vision", href: "/about/vision" },
-  //   ],
-  //   Team: [
-  //     { label: "Our Team", href: "/team" },
-  //     { label: "Leadership", href: "/team/leadership" },
-  //     { label: "Experts", href: "/team/experts" },
-  //   ],
-  //   More: [
-  //     { label: "Gallery", href: "/gallery" },
-  //     { label: "Client's Blog", href: "/stories" },
-  //     { label: "Achievements", href: "/achievements" },
-  //     { label: "Events", href: "/events" },
-  //     { label: "News", href: "/news" },
-  //     { label: "Courses", href: "/courses" },
-  //     { label: "Usual", href: "/usual" },
-  //     { label: "Pad Counter", href: "/pad" },
-  //     { label: "Upload", href: "/upload" },
-  //   ],
-  // };
-
   const renderDropdown = (category: string) => (
     <motion.div
+      ref={dropdownRef}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
