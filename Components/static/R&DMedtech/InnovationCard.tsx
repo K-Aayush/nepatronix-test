@@ -42,8 +42,8 @@ const InnovationCard: React.FC<InnovationCardProps> = ({
         className="object-cover w-[250px] h-auto mb-4 rounded-lg "
       />
       <div>
-        <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
-        <p className="text-lg text-gray-300">{description}</p>
+        <h3 className="mb-2 text-3xl font-semibold text-white">{title}</h3>
+        <p className="text-xl text-gray-300">{description}</p>
       </div>
     </motion.div>
   );

@@ -1,302 +1,331 @@
 "use client";
 
-import Image from "next/image";
-import { motion, Variants } from "framer-motion";
-import AnalyticsRequester from "@/ApiRequest/AnalyticsRequester";
-import { useState } from "react";
-import { Button } from "../ui/button";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Brain,
+  Scan,
+  Target,
+  Database,
+  Zap,
+  Eye,
+  Activity,
+  Stethoscope,
+  Microscope,
+} from "lucide-react";
+import Link from "next/link";
+import ServiceCard from "@/Components/ui/service-card";
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-const carouselVariants: Variants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-interface Feature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  imgSrc: string;
-}
-
-const features: Feature[] = [
-  {
-    icon: "🔍",
-    title: "Precision Diagnostics",
-    description:
-      "AI algorithms analyze medical data to deliver highly accurate diagnostic insights.",
-  },
-  {
-    icon: "⏱️",
-    title: "Instant Results",
-    description:
-      "Get diagnostic suggestions in seconds, enabling swift treatment decisions.",
-  },
-  {
-    icon: "🛡️",
-    title: "Secure Processing",
-    description:
-      "Patient data is processed with end-to-end encryption, ensuring privacy.",
-  },
-  {
-    icon: "📚",
-    title: "Evidence-Based Insights",
-    description:
-      "Leverage a vast database of medical knowledge for informed diagnoses.",
-  },
-];
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "AI-assisted diagnosis has transformed our clinic’s efficiency and accuracy.",
-    author: "Dr. Sarah Lee",
-    role: "Chief Physician",
-    imgSrc: "/static/testimonial-1.jpg",
-  },
-  {
-    quote:
-      "The speed of AI diagnostics allows us to treat patients faster than ever.",
-    author: "Dr. Mark Patel",
-    role: "Cardiologist",
-    imgSrc: "/static/testimonial-2.jpg",
-  },
-  {
-    quote: "Secure and reliable, this tool is a game-changer for our practice.",
-    author: "Dr. Emily Chen",
-    role: "General Practitioner",
-    imgSrc: "/static/testimonial-3.jpg",
-  },
-];
-
-const AIAssistedDiagnosisPage = () => {
-  const [currentFeature, setCurrentFeature] = useState(0);
-
-  const nextFeature = () => {
-    setCurrentFeature((prev) => (prev + 1) % features.length);
-  };
-
-  const prevFeature = () => {
-    setCurrentFeature((prev) => (prev - 1 + features.length) % features.length);
-  };
+export default function AIAssistedDiagnosticsPage() {
+  const services = [
+    {
+      icon: Brain,
+      title: "Machine Learning Diagnostics",
+      description:
+        "Advanced ML algorithms that assist healthcare professionals in accurate and rapid diagnosis.",
+      features: [
+        "Deep learning image analysis",
+        "Pattern recognition for rare diseases",
+        "Continuous learning from medical data",
+        "Integration with existing diagnostic tools",
+      ],
+    },
+    {
+      icon: Scan,
+      title: "Medical Imaging AI",
+      description:
+        "Sophisticated AI systems for analyzing medical images with precision and speed.",
+      features: [
+        "Radiology image interpretation",
+        "Automated anomaly detection",
+        "3D medical image reconstruction",
+        "Cross-modality image fusion",
+      ],
+    },
+    {
+      icon: Target,
+      title: "Precision Medicine",
+      description:
+        "Personalized treatment recommendations based on individual patient data and AI analysis.",
+      features: [
+        "Genomic data analysis",
+        "Drug interaction predictions",
+        "Treatment outcome forecasting",
+        "Personalized therapy optimization",
+      ],
+    },
+    {
+      icon: Database,
+      title: "Clinical Decision Support",
+      description:
+        "AI-powered systems that provide evidence-based recommendations for clinical decision-making.",
+      features: [
+        "Real-time clinical alerts",
+        "Evidence-based treatment suggestions",
+        "Risk assessment algorithms",
+        "Protocol compliance monitoring",
+      ],
+    },
+    {
+      icon: Zap,
+      title: "Rapid Screening Tools",
+      description:
+        "Lightning-fast AI screening tools for early detection and prevention of diseases.",
+      features: [
+        "Automated health screening",
+        "Early disease detection algorithms",
+        "Population health monitoring",
+        "Preventive care recommendations",
+      ],
+    },
+    {
+      icon: Eye,
+      title: "Computer Vision Diagnostics",
+      description:
+        "Advanced computer vision systems for medical image analysis and diagnostic support.",
+      features: [
+        "Retinal disease detection",
+        "Skin lesion analysis",
+        "Pathology slide examination",
+        "Surgical guidance systems",
+      ],
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-gray-100" style={{ paddingTop: "50px" }}>
-      <AnalyticsRequester id="ai-diagnosis" />
+    <div className="relative min-h-screen py-32 overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900">
+      {/* DNA Helix Animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            rotate: 360,
+            y: [0, -50, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute w-32 h-32 top-1/4 left-10"
+        >
+          <div className="relative w-full h-full">
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  rotate: i * 45,
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                }}
+                className="absolute w-4 h-4 rounded-full bg-purple-400/30"
+                style={{
+                  top: `${Math.sin((i * Math.PI) / 4) * 40 + 50}%`,
+                  left: `${Math.cos((i * Math.PI) / 4) * 40 + 50}%`,
+                }}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
-      {/* Hero Section */}
-      <motion.section
-        className="py-32 text-white bg-gradient-to-b from-blue-900 to-cyan-700"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        aria-label="AI-Assisted Diagnosis Hero"
+      {/* Floating Medical Icons */}
+      <motion.div
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 10, -10, 0],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-20 right-20 text-indigo-400/20"
       >
-        <div className="px-6 mx-auto text-center max-w-7xl">
-          <motion.h1
-            className="mb-4 text-4xl font-bold md:text-5xl"
-            variants={itemVariants}
-          >
-            AI-Powered Diagnosis
-          </motion.h1>
-          <motion.p
-            className="max-w-3xl mx-auto mb-8 text-lg md:text-2xl"
-            variants={itemVariants}
-          >
-            Unlock faster, more accurate diagnoses with cutting-edge AI
-            technology designed for healthcare professionals.
-          </motion.p>
-          <motion.div
-            className="flex justify-center gap-4"
-            variants={itemVariants}
-          >
-            <motion.a
-              href="https://calendly.com/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 font-semibold text-black transition-all duration-300 rounded-lg shadow-md bg-cyan-400 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Schedule a call"
-            >
-              Get Started
-            </motion.a>
-            <Button
-              variant="outline"
-              className="text-white transition-all duration-300 border-white hover:bg-white hover:text-black hover:scale-105"
-            >
-              Learn More
-            </Button>
-          </motion.div>
-        </div>
-      </motion.section>
+        <Stethoscope size={60} />
+      </motion.div>
 
-      {/* Ads (Commented as in your code) */}
-      {/* <Ads page="services/ai-diagnosis" index={1} /> */}
+      <motion.div
+        animate={{
+          x: [0, 30, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ duration: 12, repeat: Infinity }}
+        className="absolute bottom-20 right-1/4 text-purple-400/20"
+      >
+        <Microscope size={50} />
+      </motion.div>
 
-      {/* Features Carousel */}
-      <section className="px-6 py-16" aria-label="AI Diagnosis Features">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="mb-12 text-3xl font-bold text-center text-gray-800"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Core Features
-          </motion.h2>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10"
+      >
+        {/* Hero Section with Brain Scan Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="relative px-8 py-20 text-center"
+        >
+          {/* Animated Brain Scan */}
           <motion.div
-            className="p-8 shadow-lg bg-white/80 backdrop-blur-md rounded-2xl"
-            variants={carouselVariants}
-            key={currentFeature}
-            initial="hidden"
-            animate="visible"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="relative mb-12"
           >
-            <div className="flex flex-col items-center gap-6 md:flex-row">
-              <span className="text-6xl" aria-hidden="true">
-                {features[currentFeature].icon}
-              </span>
-              <div>
-                <h3 className="mb-2 text-3xl font-semibold text-gray-800">
-                  {features[currentFeature].title}
-                </h3>
-                <p className="text-xl text-gray-600">
-                  {features[currentFeature].description}
-                </p>
-              </div>
+            <div className="relative inline-flex items-center justify-center w-32 h-32">
+              <Brain size={80} className="text-purple-400" />
+              <motion.div
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.8, 0.3],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute inset-0 border-2 rounded-full border-purple-400/50"
+              />
+              <motion.div
+                animate={{
+                  scale: [1, 2, 1],
+                  opacity: [0.2, 0.6, 0.2],
+                }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                className="absolute inset-0 border-2 rounded-full border-indigo-400/50"
+              />
             </div>
           </motion.div>
-          <div className="flex justify-center gap-4 mt-6">
-            <button
-              onClick={prevFeature}
-              className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
-              aria-label="Previous feature"
-            >
-              ←
-            </button>
-            <button
-              onClick={nextFeature}
-              className="p-2 bg-gray-200 rounded-full hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
-              aria-label="Next feature"
-            >
-              →
-            </button>
+
+          <h1 className="mb-8 text-5xl font-bold md:text-7xl lg:text-8xl">
+            <span className="text-transparent bg-gradient-to-r from-indigo-200 via-purple-200 to-blue-200 bg-clip-text">
+              AI Assisted
+            </span>
+            <br />
+            <span className="text-4xl text-white/90 md:text-5xl lg:text-6xl">
+              Diagnostics
+            </span>
+          </h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="max-w-4xl mx-auto text-2xl font-light leading-relaxed md:text-3xl text-indigo-100/90"
+          >
+            Transforming medical diagnosis through artificial intelligence,
+            machine learning, and advanced analytics to improve patient outcomes
+            and clinical efficiency.
+          </motion.p>
+        </motion.div>
+
+        {/* Diagnostic Metrics Dashboard */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="container px-8 mx-auto mb-20"
+        >
+          <div className="max-w-6xl p-8 mx-auto border bg-white/5 backdrop-blur-xl rounded-3xl border-purple-400/30">
+            <h3 className="mb-8 text-3xl font-bold text-center text-purple-200">
+              Diagnostic Performance Metrics
+            </h3>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="text-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring" }}
+                  className="mb-2 text-5xl font-bold text-purple-400"
+                >
+                  98.7%
+                </motion.div>
+                <div className="text-lg text-purple-200/80">Accuracy Rate</div>
+                <div className="w-full h-2 mt-3 rounded-full bg-purple-900/30">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "98.7%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, delay: 0.5 }}
+                    className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring", delay: 0.2 }}
+                  className="mb-2 text-5xl font-bold text-indigo-400"
+                >
+                  2.3s
+                </motion.div>
+                <div className="text-lg text-indigo-200/80">
+                  Average Analysis Time
+                </div>
+                <Activity className="w-8 h-8 mx-auto mt-3 text-indigo-400" />
+              </div>
+              <div className="text-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring", delay: 0.4 }}
+                  className="mb-2 text-5xl font-bold text-blue-400"
+                >
+                  1M+
+                </motion.div>
+                <div className="text-lg text-blue-200/80">Cases Analyzed</div>
+                <div className="flex justify-center mt-3">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.8 + i * 0.1 }}
+                      className="w-2 h-6 mx-1 bg-blue-400 rounded"
+                      style={{ height: `${Math.random() * 20 + 10}px` }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Services Grid */}
+        <div className="container px-8 pb-24 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="mb-6 text-4xl font-bold text-white md:text-6xl">
+              Diagnostic Solutions
+            </h2>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-16 h-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+              <Brain className="text-purple-400" size={24} />
+              <div className="w-16 h-1 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500"></div>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 gap-10 mx-auto lg:grid-cols-2 max-w-7xl">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                index={index}
+                variant="medical"
+              />
+            ))}
           </div>
         </div>
-      </section>
-
-      {/* Ads (Commented as in your code) */}
-      {/* <Ads page="services/ai-diagnosis" index={2} /> */}
-
-      {/* Testimonials Section */}
-      <section className="px-6 py-16 bg-white" aria-label="Testimonials">
-        <div className="max-w-5xl mx-auto">
-          <motion.h2
-            className="mb-12 text-3xl font-bold text-center text-gray-800"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            What Our Users Say
-          </motion.h2>
-          <motion.div
-            className="grid grid-cols-1 gap-6 md:grid-cols-3"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col h-full p-6 transition-shadow duration-300 rounded-lg shadow-md bg-gray-50 hover:shadow-lg"
-                variants={itemVariants}
-                role="article"
-                aria-labelledby={`testimonial-title-${index}`}
-              >
-                <Image
-                  src={testimonial.imgSrc}
-                  alt={testimonial.author}
-                  width={80}
-                  height={80}
-                  className="object-cover mx-auto mb-4 rounded-full"
-                  loading="eager"
-                />
-                <p className="flex-1 mb-4 italic text-center text-gray-600">
-                  {testimonial.quote}
-                </p>
-                <div className="text-center">
-                  <h3
-                    id={`testimonial-title-${index}`}
-                    className="text-lg font-semibold text-gray-800"
-                  >
-                    {testimonial.author}
-                  </h3>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Footer */}
-      <motion.section
-        className="py-20 text-center text-white bg-cyan-800"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-        aria-label="Call to Action"
-      >
-        <motion.h2 className="mb-6 text-3xl font-bold" variants={itemVariants}>
-          Ready to Enhance Your Diagnostics?
-        </motion.h2>
-        <motion.p
-          className="max-w-xl mx-auto mb-8 text-lg"
-          variants={itemVariants}
-        >
-          Join leading healthcare providers in adopting AI for better patient
-          outcomes.
-        </motion.p>
-        <motion.div variants={itemVariants}>
-          <Button
-            asChild
-            variant="outline"
-            className="px-6 py-3 font-semibold transition-all duration-300 bg-gray-200 rounded-lg shadow-md hover:text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-400"
-          >
-            <a
-              href="https://calendly.com/schedule"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Schedule a demo"
-            >
-              Schedule a Demo
-            </a>
-          </Button>
-        </motion.div>
-      </motion.section>
-    </main>
+      </motion.div>
+    </div>
   );
-};
-
-export default AIAssistedDiagnosisPage;
+}

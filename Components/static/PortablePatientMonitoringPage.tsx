@@ -94,21 +94,21 @@ const PortablePatientMonitoringPage = () => {
         variants={slideVariants}
         aria-label="Portable Patient Monitoring Hero"
       >
-        <div className="flex flex-col items-center max-w-6xl gap-8 px-6 mx-auto md:flex-row">
+        <div className="flex flex-col items-center max-w-[1280px] gap-8 px-6 mx-auto md:flex-row">
           <motion.div className="md:w-1/2" variants={slideVariants}>
-            <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+            <h1 className="mb-4 text-5xl font-bold md:text-7xl">
               Advanced Portable Monitoring
             </h1>
-            <p className="max-w-md mb-6 text-lg md:text-xl">
+            <p className="max-w-md mb-6 text-xl md:text-2xl">
               Transform patient care with wearable devices that provide
               real-time health insights anytime, anywhere.
             </p>
             <Button
               asChild
-              className="px-6 py-2 font-semibold text-orange-600 transition-all duration-300 bg-white rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white"
+              className="px-6 py-2 text-xl font-semibold text-orange-600 transition-all duration-300 bg-white rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white"
             >
               <a
-                href="https://calendly.com/schedule"
+                href="/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get started"
@@ -118,7 +118,7 @@ const PortablePatientMonitoringPage = () => {
             </Button>
           </motion.div>
           <motion.div
-            className="relative md:w-1/2"
+            className="relative flex justify-center md:w-1/2"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -126,9 +126,9 @@ const PortablePatientMonitoringPage = () => {
             <Image
               src="/static/portable-monitoring-hero.jpg"
               alt="Portable Monitoring Device"
-              width={500}
-              height={400}
-              className="object-contain rounded-lg"
+              width={1200}
+              height={1200}
+              className="object-contain rounded-lg w-[400px] h-[400px]"
               loading="eager"
               quality={100}
             />
@@ -224,17 +224,17 @@ const PortablePatientMonitoringPage = () => {
                   loading="eager"
                   quality={100}
                 />
-                <p className="flex-1 max-w-md mb-4 italic text-center text-gray-600">
+                <p className="flex-1 max-w-md mb-4 text-lg italic text-center text-gray-600">
                   {testimonial.quote}
                 </p>
                 <div className="text-center">
                   <h3
                     id={`testimonial-title-${index}`}
-                    className="text-lg font-semibold text-gray-800"
+                    className="text-xl font-semibold text-gray-800"
                   >
                     {testimonial.author}
                   </h3>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  <p className="text-lg text-gray-500">{testimonial.role}</p>
                 </div>
               </motion.div>
             ))}
@@ -254,7 +254,7 @@ const PortablePatientMonitoringPage = () => {
           Stay Ahead in Patient Care
         </motion.h2>
         <motion.p
-          className="max-w-xl mx-auto mb-8 text-lg"
+          className="max-w-xl mx-auto mb-8 text-xl"
           variants={slideVariants}
         >
           Discover how portable monitoring can transform your practice.
@@ -268,19 +268,13 @@ const PortablePatientMonitoringPage = () => {
             className="px-6 py-2 font-semibold text-orange-600 transition-all duration-300 bg-white rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white"
           >
             <a
-              href="https://calendly.com/schedule"
+              href="/contact"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get started"
             >
               Get Started
             </a>
-          </Button>
-          <Button
-            variant="outline"
-            className="text-white border-white hover:bg-white hover:text-orange-600"
-          >
-            Subscribe to Updates
           </Button>
         </motion.div>
       </motion.section>

@@ -7,7 +7,7 @@ const HomeProducts = async () => {
   const data = await getLists("products", 0, 8);
 
   return (
-    <section className="w-full  text-[20px]  text-center relative  py-20 overflow-hidden bg-gradient-to-b from-black via-purple-900 to-black">
+    <section className="w-full  text-[20px]  text-center relative  py-20 overflow-hidden bg-gradient-to-br from-purple-800 via-indigo-600 to-pink-500">
       <>
         <br />
         <br />

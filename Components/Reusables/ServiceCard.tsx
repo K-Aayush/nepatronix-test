@@ -51,7 +51,7 @@ const ServiceCard = ({ data }: { data: any }) => {
             />
           </motion.div>
           <motion.h3
-            className="text-2xl font-bold text-white mb-4 overflow-hidden h-[60px]"
+            className="text-3xl font-bold text-white mb-4 overflow-hidden h-[60px]"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -59,7 +59,7 @@ const ServiceCard = ({ data }: { data: any }) => {
             {data?.title.slice(0, 40)}...
           </motion.h3>
           <motion.p
-            className="mb-6 text-lg text-gray-200"
+            className="mb-6 text-xl text-gray-200"
             style={{ height: "100px", overflow: "hidden" }}
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

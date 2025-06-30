@@ -126,8 +126,8 @@ export default function TeamSection() {
                       >
                         <Image
                           src={`/api/files${member.picture}`}
-                          width={300}
-                          height={400}
+                          width={200}
+                          height={200}
                           alt={`${member.title}'s picture`}
                           className="object-cover w-full h-full"
                         />

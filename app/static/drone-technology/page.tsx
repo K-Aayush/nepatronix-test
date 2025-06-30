@@ -1,8 +1,8 @@
-import DroneTech from "@/Components/static/DroneTech";
+import DroneTechnologyPage from "@/Components/static/DroneTechnologyPage";
 import React from "react";
 
 const page = () => {
-  return <DroneTech />;
+  return <DroneTechnologyPage />;
 };
 
 export default page;
